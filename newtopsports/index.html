@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://storpad.com/mishaz/aleksey/newtopsports/dashboard.html -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ТОП СПОРТС - Рабочий стол</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="ТОП СПОРТС">
+    <meta name="description" content="ТОП СПОРТС">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script src="js/check_auth.js"></script> -->
+    <link rel="icon" href="https://new.topsports.ru/img/top_sports_logo_black_short_transparency.png">
+    <link rel="stylesheet" type="text/css" href="./css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/media_main.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/media_index.css">
+    <link rel="stylesheet" href="./css/alekseystyles.css">
+    <!-- <script src="./js/chart.js@2.8.0"></script> -->
+  <style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style><style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+
+  <body><div id="modules"><!-- Хедер -->
+<div id="header">
+  <div class="header-top">
+    <div class="container row">
+      <div class="left-side row">
+        <a class="logo" href="https://new.topsports.ru/dashboard"><img src="./svg/logo.svg" alt="Логотип"></a>
+        <div class="activate hover">
+          <div class="head row">
+            <a class="title" href="https://new.topsports.ru/dashboard">Рабочий стол</a>
+          </div>
+        </div>
+        <div class="activate hover">
+          <div class="head row">
+            <div class="title">Каталоги</div>
+            <div class="triangle icon"></div>
+          </div>
+          <div id="catalogs" class="drop-down">
+            <div class="row">
+              <a class="catalog-equip item catalog" href="https://new.topsports.ru/equip" onclick="">Экипировка</a>
+              <a class="cart-equip item cart-info row " href="https://new.topsports.ru/equip/?cart" onclick="">
+                <div class="cart icon"></div>
+                <div class="qty">0</div>
+              </a>
+            </div>
+          
+            <div class="row">
+              <a class="catalog-boats item catalog" href="https://new.topsports.ru/boats" onclick="">Лодки и моторы</a>
+              <a class="cart-boats item cart-info row " href="https://new.topsports.ru/boats/?cart" onclick="">
+                <div class="cart icon"></div>
+                <div class="qty">0</div>
+              </a>
+            </div>
+          
+            <div class="row">
+              <a class="catalog-snow item catalog" href="https://new.topsports.ru/snow" onclick="">Снегоходы</a>
+              <a class="cart-snow item cart-info row " href="https://new.topsports.ru/snow/?cart" onclick="">
+                <div class="cart icon"></div>
+                <div class="qty">0</div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="activate hover select">
+          <div class="head row">
+            <div class="title">Закупки</div>
+            <div class="triangle icon"></div>
+          </div>
+          <div class="drop-down">
+            <a class="item" href="https://new.topsports.ru/orders/">Заказы</a>
+            <a class="item" href="https://new.topsports.ru/reclamations/">Рекламации</a>
+            <a class="item" href="https://new.topsports.ru/documents/">Документы</a>
+            <a class="item" href="https://new.topsports.ru/certificates/">Сертификаты</a>
+          </div>
+        </div>
+      </div>
+      <div class="right-side row">
+        <div class="activate hover select">
+          <a class="head row" href="https://new.topsports.ru/profile">
+            <div class="profile icon"></div>
+            <div id="profile" class="">
+              <div class="title h3">atemasov</div>
+              <div class="username text light">Максим Атемасов</div>
+            </div>
+          </a>
+          <div class="drop-down">
+            <div class="links">
+              <a class="item" href="https://new.topsports.ru/users">Пользователи</a>
+              <a class="item" href="https://new.topsports.ru/contractors">Контрагенты</a>
+              <a class="item" href="https://new.topsports.ru/addresses">Мои адреса</a>
+              <a class="item" href="https://yadi.sk/d/I03PCO253MFRuj" target="_blank">Медиабанк</a>
+            </div>
+            <a class="item" onclick="logOut(event)">Выход</a>
+          </div>
+        </div>
+        <div class="notifications icon" onclick="openPopUp(&#39;#notifications&#39;)">
+          <div class="qty in-circle row">#qty#</div>
+        </div>
+        <div class="burger icon" onclick="toggleMobMenu()"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Мобильное меню (адаптив хедера) -->
+<div id="mob-menu" class="pop-up-container">
+  <div class="pop-up">
+    <div class="container">
+      <a class="profile row" href="https://new.topsports.ru/profile">
+        <div class="profile icon"></div>
+        <div id="mob-profile" class="">
+          <div class="title h3">atemasov</div>
+          <div class="username text light">Максим Атемасов</div>
+        </div>
+      </a>
+      <div class="list">
+        <div class="item switch close">
+          <div class="item-title" onclick="switchContent(event)">
+            <div class="title">Профиль</div>
+            <div class="open dark icon switch-icon"></div>
+          </div>
+          <div class="items switch-cont">
+            <div class="item">
+              <a href="https://new.topsports.ru/users">Пользователи</a>
+            </div>
+            <div class="item">
+              <a href="https://new.topsports.ru/contractors">Контрагенты</a>
+            </div>
+            <div class="item">
+              <a href="https://new.topsports.ru/addresses">Мои адреса</a>
+            </div>
+            <div class="item">
+              <a href="https://yadi.sk/d/I03PCO253MFRuj" target="_blank">Медиабанк</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-title">
+            <a class="title" href="https://new.topsports.ru/dashboard">Рабочий стол</a>
+          </div>
+        </div>
+        <div class="item switch close">
+          <div class="item-title" onclick="switchContent(event)">
+            <div class="title">Каталоги</div>
+            <div class="open dark icon switch-icon"></div>
+          </div>
+          <div id="mob-catalogs" class="items switch-cont drop-down">
+            <div class="row">
+              <a class="catalog-equip item catalog" href="https://new.topsports.ru/equip" onclick="">Экипировка</a>
+              <a class="cart-equip item cart-info row " href="https://new.topsports.ru/equip/?cart" onclick="">
+                <div class="cart icon"></div>
+                <div class="qty">0</div>
+              </a>
+            </div>
+          
+            <div class="row">
+              <a class="catalog-boats item catalog" href="https://new.topsports.ru/boats" onclick="">Лодки и моторы</a>
+              <a class="cart-boats item cart-info row " href="https://new.topsports.ru/boats/?cart" onclick="">
+                <div class="cart icon"></div>
+                <div class="qty">0</div>
+              </a>
+            </div>
+          
+            <div class="row">
+              <a class="catalog-snow item catalog" href="https://new.topsports.ru/snow" onclick="">Снегоходы</a>
+              <a class="cart-snow item cart-info row " href="https://new.topsports.ru/snow/?cart" onclick="">
+                <div class="cart icon"></div>
+                <div class="qty">0</div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="item switch close">
+          <div class="item-title" onclick="switchContent(event)">
+            <div class="title">Закупки</div>
+            <div class="open dark icon switch-icon"></div>
+          </div>
+          <div class="items switch-cont">
+            <div class="item">
+              <a href="https://new.topsports.ru/orders/">Заказы</a>
+            </div>
+            <div class="item">
+              <a href="https://new.topsports.ru/reclamations/">Рекламации</a>
+            </div>
+            <div class="item">
+              <a href="https://new.topsports.ru/documents/">Документы</a>
+            </div>
+            <div class="item">
+              <a href="https://new.topsports.ru/certificates/">Сертификаты</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-title">
+            <a class="title" onclick="logOut(event)">Выход</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Футер -->
+<div id="footer">
+  <div class="container">
+    <div class="wrap">
+      <div>Отдел продаж: <a href="tel:+78463004499">+7 (846) 300-44-99</a></div>
+      <div>© 2020 TOP SPORTS</div>
+    </div>
+  </div>
+</div>
+
+<!-- Окно уведомлений -->
+<div id="notifications" class="pop-up-container">
+  <div class="pop-up">
+    <div class="pop-up-title row">
+      <div class="row">
+        <div class="title h1">Уведомления</div>
+      </div>
+      <div class="close icon"></div>
+    </div>
+    <div class="pop-up-body">
+      <div class="message row #status# template">
+        <div class="row">
+          <div class="message icon"></div>
+          <div class="message text">
+            <div>#text#</div>
+            <div class="row #isHidden#">
+              <div class="download icon"></div>
+              <div class="link">#link#</div>
+            </div>
+          </div>
+        </div>
+        <div class="date text midlight">#date#, #time#</div>
+      </div>
+    </div>
+    <div class="loader">
+      <div class="loader icon"></div>
+      <div class="text">Пожалуйста, подождите</div>
+    </div>
+  </div>
+</div>
+
+<!-- Системные сообщения -->
+<div id="alerts" class="pop-up-container">
+  <div class="pop-up">
+    <div class="close icon"></div>
+    <div class="text"></div>
+    <div class="btns-wrap">
+      <div class="btn cancel">Отмена</div>
+      <div class="btn act accept">Ок</div>
+    </div>
+  </div>
+</div>
+
+<!-- Прелоадер страницы -->
+<div id="page-loader" class="loader" style="display: none;">
+  <div class="loader icon"></div>
+  <div class="text"></div>
+</div>
+
+<!-- Кнопка "Наверх страницы" -->
+<svg id="up-btn" onclick="goToTop()" viewBox="0 0 38 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+  <rect x="0.5" y="0.5" width="37" height="30" rx="4.5" fill="#53606F" fill-opacity="0.6" stroke="white"></rect>
+  <path d="M18.925 11.225C18.625 10.925 18.225 10.925 17.925 11.225L10.225 18.925C9.925 19.225 9.925 19.625 10.225 19.825C10.525 20.125 10.925 20.125 11.225 19.825L18.525 12.825L25.825 19.825C26.125 20.125 26.525 20.125 26.825 19.825C27.125 19.525 27.125 19.125 26.825 18.925L18.925 11.225Z" fill="white"></path>
+</svg>
+</div>
+    <div id="main">
+			<div id="dashboard" class="container">
+				<div id="main-header" class="row">
+					<div class="title h0">Рабочий стол дилера</div>
+				</div>
+				<div class="dashboard-wrap">
+          <!-- Левая основная колонка -->
+          <main>
+            <!-- Взаиморасчеты -->
+            <section class="settle">
+              <div class="settle-title">Взаиморасчеты</div>
+              <div class="settle-blocks">
+                <div id="before-shipment" class="settle-block">
+                  <div class="lines">
+                    <div class="line">
+                      <div class="line-ic"></div>
+                      <div class="line-title">Оплата до отгрузки</div>
+                    </div>
+                    <div class="line">
+                      <div class="line-status">
+                        <div class="">Активных заказов: <span id="active-before-ships"></span></div>
+                        <div class=""></div>
+                      </div>
+                    </div>
+                    <div class="line line-money"><span>Итого:</span><div class="monRow"><div class="money"></div>&#8381;</div></div>
+                  </div>
+                </div>
+                <div id="sum-shipment" class="settle-block">
+                  <div class="attention">Просрочено!</div>
+                  <div class="lines">
+                    <div class="line">
+                      <div class="line-ic"></div>
+                      <div class="line-title">Оплата за отгруженный товар</div>
+                    </div>
+                    <div class="line">
+                      <div class="line-status">
+                        <div class="">Активных заказов:  <span id="active-ships"></span></div>
+                        <div class="">Оплата до: <span id="payment-before"></span></div>
+                      </div>
+                    </div>
+                    <div class="line line-money"><span>Итого:</span> <div class="monRow"><div class="money"></div>&#8381;</div></div>
+                  </div>
+                </div>
+                <div id="overpayment" class="settle-block">
+                  <div class="lines">
+                    <div class="line">
+                      <div class="line-ic"></div>
+                      <div class="line-title">Переплаты в заказах</div>
+                    </div>
+                    <div class="line">
+                      <div class="line-status">
+                        <div class="">Активных заказов: <span id="activeorder"></span></div>
+                        <div class=""></div>
+                      </div>
+                    </div>
+                    <div class="line line-money"><span>Итого:</span><div class="monRow"><div class="money"></div>&#8381;</div></div>
+                  </div>
+                </div>
+                <div id="deposit" class="settle-block">
+                  <div class="lines">
+                    <div class="line">
+                      <div class="line-ic"></div>
+                      <div class="line-title">Депозиты</div>
+                    </div>
+                    <div class="line line4">Активных депозитов:<span id="balance"></span></div>
+                    <div class="line line-money"><span>Итого:</span><div class="monRow"><div class="money"></div>&#8381;</div></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Карусель с баннерами -->
+            <section class="banners-carousel" id="banners">
+              <div class="carousel" data-type="product" data-img="0" style="visibility: visible;">
+                <div class="carousel-gallery-wrap">
+                  <div class="left-btn"></div>
+                  <div class="right-btn"></div>
+                  <div class="carousel-gallery" id="test">
+                    <div class="carousel-item" data-numb="0">
+                      <img src="jpg/dashboard_banner1.jpg" data-src="" alt="баннер акции">
+                    </div>
+                  
+                    <div class="carousel-item" data-numb="1">
+                      <img src="jpg/dashboard_banner2.jpg" data-src="" alt="баннер акции">
+                    </div>
+                  
+                    <div class="carousel-item" data-numb="2">
+                      <img src="jpg/dashboard_banner3.jpg" data-src="" alt="баннер акции">
+                    </div>
+                  </div>
+                </div>
+              <div class="carousel-nav"><div data-numb="0" class="active"></div><div data-numb="1"></div><div data-numb="2"></div></div></div>
+            </section>
+            <!-- Секция "Заказы в работе"-->
+            <section class="infoblock switch">
+              <div class="section-head col-wrapper row">
+                <div class="title h1">Заказы в работе</div>
+                <div class="graphic-btns">
+                  <!-- тоггл "Только предзаказы" -->
+                  <div class="preorder-toggle">
+                    <div class="toggle-name">Только предзаказы</div>
+                    <div class="toggle" id="table-toggle" onclick="toggle(event)">
+                      <div class="toggle-in"></div>
+                    </div>
+                  </div>
+                  <div class="table-btns">
+                    <div class="table-btn status1" id="status1">
+                      Ожидается <div class="st-ic"></div>
+                    </div>
+                    <div class="table-btn status2" id="status2">
+                      В наличии <div class="st-ic"></div>
+                    </div>
+                    <div class="table-btn status3" id="status3">
+                      Собран <div class="st-ic"></div>
+                    </div>
+                    <div class="table-btn status4" id="status4">
+                      Отгружен <div class="st-ic"></div>
+                    </div>
+                    <div class="table-btn status5" id="status5">
+                      Недопоставка <div class="st-ic"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="open white icon switch-icon"></div>
+              </div>
+              <div class="info-wrap switch-cont row">
+                <div class="col1">
+                  <div class="pieChart" id="pieChart">
+                    <canvas id="ordersChart" width="200" height="200"></canvas>
+                  <div class="orders-info"></div>
+                  </div>
+                  <div class="full-width">
+                    <a href="https://new.topsports.ru/orders/">Перейти к заказам</a>
+                  </div>
+                  <div class="graphic-btns1">
+                    <!-- тоггл "Только предзаказы" -->
+                    <div class="preorder-toggle">
+                      <div class="toggle-name">Только предзаказы</div>
+                      <div class="toggle" id="table-toggle-mob" onclick="toggle(event)">
+                        <div class="toggle-in"></div>
+                      </div>
+                    </div>
+                    <div class="table-btns" id="table-btns-mob">
+                      <div class="table-btn status1" id="status1-mob">
+                        Ожидается <div class="st-ic"></div></div>
+                      <div class="table-btn status2" id="status2-mob">
+                        В наличии <div class="st-ic"></div></div>
+                      <div class="table-btn status3" id="status3-mob">
+                        Собран <div class="st-ic"></div></div>
+                      <div class="table-btn status4" id="status4-mob">
+                        Отгружен <div class="st-ic"></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col2">
+                  <div id="table" class="orderTable">
+                    <!--<div class="row">
+                      <div class="textR">
+                        <div class="nameO">ТС-567 от 20.03.20</div>
+                      <div class="typeO">Предзаказ-20 FXR</div>
+                      </div>
+                      <div class="sumR">
+                        <div class="pill vputi c10">118 950</div>
+                        <div class="pill vnali c10">8 950</div>
+                        <div class="pill sobrn c10">118 950</div>            
+                        <div class="pill otgrz c10">228 950</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="textR">
+                        <div class="nameO">ТС-567 от 20.03.20</div>
+                      <div class="typeO">Предзаказ-20 FXR</div>
+                      </div>
+                      <div class="sumR">
+                        <div class="pill vputi c10">118 950</div>
+                        <div class="pill vnali c10">8 950</div>
+                        <div class="pill sobrn c10">118 950</div>            
+                        <div class="pill otgrz c10">228 950</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="textR">
+                        <div class="nameO">ТС-567 от 20.03.20</div>
+                      <div class="typeO">Предзаказ-20 FXR</div>
+                      </div>
+                      <div class="sumR">
+                        <div class="pill vputi c10">118 950</div>
+                        <div class="pill vnali c10">8 950</div>
+                        <div class="pill sobrn c10">118 950</div>            
+                        <div class="pill otgrz c10">228 950</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="textR">
+                        <div class="nameO">ТС-567 от 20.03.20</div>
+                      <div class="typeO">Предзаказ-20 FXR</div>
+                      </div>
+                      <div class="sumR">
+                        <div class="pill vputi c10">118 950</div>
+                        <div class="pill vnali c10">8 950</div>
+                        <div class="pill sobrn c10">118 950</div>            
+                        <div class="pill otgrz c10">228 950</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="textR">
+                        <div class="nameO">ТС-567 от 20.03.20</div>
+                      <div class="typeO">Предзаказ-20 FXR</div>
+                      </div>
+                      <div class="sumR">
+                        <div class="pill vputi c10">118 950</div>
+                        <div class="pill vnali c10">8 950</div>
+                        <div class="pill sobrn c10">118 950</div>            
+                        <div class="pill otgrz c10">228 950</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="textR">
+                        <div class="nameO">ТС-567 от 20.03.20</div>
+                      <div class="typeO">Предзаказ-20 FXR</div>
+                      </div>
+                      <div class="sumR">
+                        <div class="pill vputi c10">118 950</div>
+                        <div class="pill vnali c10">8 950</div>
+                        <div class="pill sobrn c10">118 950</div>            
+                        <div class="pill otgrz c10">228 950</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="textR">
+                        <div class="nameO">ТС-567 от 20.03.20</div>
+                      <div class="typeO">Предзаказ-20 FXR</div>
+                      </div>
+                      <div class="sumR">
+                        <div class="pill vputi c10">118 950</div>
+                        <div class="pill vnali c10">8 950</div>
+                        <div class="pill sobrn c10">118 950</div>            
+                        <div class="pill otgrz c10">228 950</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="textR">
+                        <div class="nameO">ТС-567 от 20.03.20</div>
+                      <div class="typeO">Предзаказ-20 FXR</div>
+                      </div>
+                      <div class="sumR">
+                        <div class="pill vputi c10">118 950</div>
+                        <div class="pill vnali c10">8 950</div>
+                        <div class="pill sobrn c10">118 950</div>            
+                        <div class="pill otgrz c10">228 950</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="textR">
+                        <div class="nameO">ТС-567 от 20.03.20</div>
+                      <div class="typeO">Предзаказ-20 FXR</div>
+                      </div>
+                      <div class="sumR">
+                        <div class="pill vputi c10">118 950</div>
+                        <div class="pill vnali c10">8 950</div>
+                        <div class="pill sobrn c10">118 950</div>            
+                        <div class="pill otgrz c10">228 950</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="textR">
+                        <div class="nameO">ТС-567 от 20.03.20</div>
+                      <div class="typeO">Предзаказ-20 FXR</div>
+                      </div>
+                      <div class="sumR">
+                        <div class="pill vputi c10">118 950</div>
+                        <div class="pill vnali c10">8 950</div>
+                        <div class="pill sobrn c10">118 950</div>            
+                        <div class="pill otgrz c10">228 950</div>
+                      </div>
+                    </div> -->
+                  </div>
+
+                  <!-- Таблица "Заказы в работе"-->
+                  <!-- <div id="dashboard-table" class="table-desktop active">
+                    <table>
+                      <tbody>
+                        <tr onclick="showOrder(event,#id#)">
+                          <td>#order_number#</td>
+                          <td>#order_event#</td>
+                          <td>
+                            <div class="row">
+                              <div class="vputi c10 #display1#">#sum1#</div>
+                              <div class="vnali c10 #display2#">#sum2#</div>
+                              <div class="sobrn c10 #display3#">#sum3#</div>
+                              <div class="otgrz c10 #display4#">#sum4#</div>
+                              <div class="nedop c10 #display5#">#sum5#</div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div> -->
+                  <!-- <div id="mob-dashboard-table">
+                    <div class="tr">
+                      <div class="tr-head">
+                        <div class="td">#order_number#</div>
+                        <div class="td">#order_event#</div>
+                      </div>
+                      <div class="row">
+                        <div class="vputi c10 #display1#">#sum1#</div>
+                        <div class="vnali c10 #display2#">#sum2#</div>
+                        <div class="sobrn c10 #display3#">#sum3#</div>
+                        <div class="otgrz c10 #display4#">#sum4#</div>
+                        <div class="nedop c10 #display5#">#sum5#</div>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </section>
+            <!-- Секция "Рекламация в работе" и "График поставок" -->
+            <section class="info-graphic-1">
+              <div class="info-wrap">
+                <div class="col1">
+                  <div class="col-wrapper center-col switch">
+                    <!-- Заголовок секции -->
+                    <div class="section-head">
+                      <div class="title h1">Рекламации в работе</div>
+                      <div class="open white icon switch-icon"></div>
+                    </div>
+                    <div class="section-body switch-cont">
+                      <!-- Диаграмма рекламаций -->
+                      <div class="speed-chart">
+                        <div class="gauge">
+                          <div class="g-body">
+                            <div class="g-fill"></div>
+                            <div class="g-cover"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="speed-point">
+                        <div class="speed-pointer"></div>
+                      </div>
+                      <!-- Текст результата рекламаций -->
+                      <div class="recl-result">Мы обработали 75% ваших обращений. В работе 5 обращений</div>
+                      <!-- Копка перейти к рекламациям -->
+                      <div class="full-width">
+                        <a href="https://new.topsports.ru/reclamations">Перейти к рекламациям</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col2 switch">
+                  <div class="col-wrapper center-col switch">
+                    <div class="col-head">
+                      <!-- Заголовок секции -->
+                      <div class="section-head">
+                        <div class="title h1">Ежегодная динамика товарооборота</div>
+                        <div class="open white icon switch-icon"></div>
+                      </div>
+                      <!-- тоггл "Только предзаказы" -->
+                      <div class="preorder-toggle">
+                        <div class="toggle-name">Только предзаказы</div>
+                        <div class="toggle" id="bar-chart-tgl-1" onclick="toggle(event)">
+                          <div class="toggle-in"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="section-body switch-cont">
+                      <div id="chart3" style="width: 100%; height: 258px;">
+                        <canvas id="bar-chart"></canvas>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </section>
+            
+
+          </main>
+          <!-- Правая колонка с баннерами -->
+          <aside>
+            <!-- статические баннеры, скрываются на 1360px, вместо них адпативный сладер после секции "Взаиморасчеты" -->
+            <div class="banners" id="dashboard-banners">
+              
+            </div>
+          </aside>
+        </div>
+      </div>
+		</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
+    <!-- <script src="./js/test.js"></script> -->
+    <!-- <script src="./js/table.js"></script> -->
+    <script src="./js/carousel.js.Без названия"></script>
+    <!-- <script src="./js/index.js"></script> -->
+    <script src="./js/better.js"></script>
+
+    <!-- Инициализации подключений -->
+    <script>
+
+    //  инициализации селекта для секции
+    //initDropDown('#procurement-select');
+    </script>
+
+</body></html>

@@ -1,0 +1,17 @@
+[
+  {
+    "link": "",
+    "src": "dashboard_banner1.jpg",
+    "text": "Баннер 1"
+  },
+  {
+    "link": "",
+    "src": "dashboard_banner2.jpg",
+    "text": "Баннер 2"
+  },
+  {
+    "link": "",
+    "src": "dashboard_banner3.jpg",
+    "text": "Баннер 3"
+  }
+]

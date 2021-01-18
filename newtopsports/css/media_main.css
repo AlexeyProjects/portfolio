@@ -1,0 +1,613 @@
+/* =====================================================================================================
+Разрешения без ховера:
+===================================================================================================== */
+
+@media (pointer:coarse) {
+  /* Подсказки: */
+  [tooltip]:hover::before,
+  [tooltip]:hover::after {
+    display: none;
+  }
+  .tooltip {
+    display: none;
+  }
+
+  .question.icon[tooltip]:hover::before,
+  [tooltip]:hover::after {
+    display: block;
+  }
+
+  .tooltip[data-parent*=question] {
+    display: block;
+  }
+}
+
+/* =====================================================================================================
+Все разрешения по ориентации экрана:
+===================================================================================================== */
+
+/* Портретная ориентация: */
+@media all and (orientation:portrait) {
+  #full-img .carousel {
+    max-width: 90vw;
+    max-height: 90vw;
+  }
+  #full-img .carousel-gallery img {
+    max-width: 90vw;
+    max-height: 90vw;
+  }
+}
+
+/* Альбомная ориентация: */
+@media all and (orientation:landscape) {
+  #full-img .carousel {
+    max-width: 90vh;
+    max-height: 90vh;
+  }
+  #full-img .carousel-gallery img {
+    max-width: 90vh;
+    max-height: 90vh;
+  }
+}
+
+/* =====================================================================================================
+Desktop:
+===================================================================================================== */
+
+/* Стили на ширину больше 1920px: */
+@media only screen and (min-width: 1921px) {
+
+  /* Основные стили: */
+
+  .container {
+    margin: 0 3vw;
+  }
+
+  /* Кнопка "Наверх страницы": */
+
+  #up-btn {
+    right: 3vw;
+  }
+
+  /* Информационная карточка товара: */
+
+  .info-card {
+    width: 38.5vw;
+    max-width: 1000px;
+  }
+}
+
+/* Стили на ширину больше 1080px: */
+@media only screen and (min-width: 1081px) {
+
+  /* Окно уведомлений: */
+
+  #notifications::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  #notifications::-webkit-scrollbar-track {
+    background-color: #F8F8F8;
+    border: 1px solid #C6C6C6;
+    border-radius: 19px;
+  }
+
+  #notifications::-webkit-scrollbar-thumb {
+    background-color: #C6C6C6;
+    border: 1px solid #C6C6C6;
+    border-radius: 19px;
+    cursor: pointer;
+  }
+
+  #notifications::-webkit-scrollbar-corner {
+    background-color: #F8F8F8;
+  }
+
+/* Блок фильтров видимый на всех разрешениях: */
+
+  .pop-up-container.filters.visible {
+    display: block !important;
+  }
+}
+
+/* =====================================================================================================
+Laptop:
+===================================================================================================== */
+
+/* Стили на ширину от 0 до 1440px включительно: */
+@media only screen and (max-width: 1440px) {
+
+  /* Основные стили: */
+
+  .container {
+    margin: 0 3rem;
+  }
+
+  /* Стили текста: */
+
+  .h0 {
+    font-size: 2em;
+  }
+
+  /* Всплывающие окна: */
+
+  .pop-up-container {
+    padding: 40px 0;
+  }
+
+  /* Кнопка "Наверх страницы": */
+
+  #up-btn {
+    right: 3rem;
+  }
+}
+
+/* =====================================================================================================
+Tablet:
+===================================================================================================== */
+
+/* Стили на ширину от 0 до 1080px включительно: */
+@media only screen and (max-width: 1080px) {
+
+  /* Основные стили: */
+
+  body {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+
+  .container {
+    margin: 0 2.4rem;
+  }
+
+  /* Заголовок страницы: */
+
+  #main-header {
+    padding: 2.4rem 0;
+  }
+
+  #main-header + .btn {
+    display: none;
+  }
+
+  /* Тоглы */
+
+  .toggle {
+    width: 40px;
+    height: 20px;
+    margin: 7px;
+  }
+
+  .toggle .toggle-in {
+    top: -4px;
+    left: -7px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .checked .toggle .toggle-in,
+  .checked.toggle .toggle-in {
+    left: 18px;
+  }
+
+  /* Иконки: */
+
+  .icon {
+    margin-right: 0.714em;
+  }
+
+  .add.icon,
+  .relay.icon {
+    display: block;
+  }
+
+  /* Хедер */
+
+  .header-top .container {
+    height: 40px;
+  }
+
+  .header-top .activate,
+  .header-top .activate .head {
+    display: none;
+  }
+
+  .header-top .logo img {
+    max-height: 18px;
+    max-width: 100%;
+  }
+
+  .header-top .right-side .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header-top .notifications.icon {
+    background-image: url('../img/notifications_min.svg');
+  }
+
+  .header-top .burger.icon {
+    display: flex;
+    margin-left: 1.428em;
+  }
+
+  /* Мобильное меню (адаптив хедера) */
+
+  #mob-menu.open .pop-up {
+    transform: translate(0, 0);
+  }
+
+  /* Панель управления: */
+
+  .control {
+    top: 40px;
+    padding: 1em 1.14em;
+    box-shadow: 0px 0px 5px rgba(52, 73, 94, 0.05), 0px 2px 10px rgba(52, 73, 94, 0.06), 0px 4px 15px rgba(52, 73, 94, 0.1);
+  }
+
+  .control .pagination {
+    display: none !important;
+  }
+
+  /* Таблицы: */
+
+  .control {
+    top: 40px;
+  }
+
+  .table-desktop {
+    display: none !important;
+  }
+
+  .table-desktop > thead > tr > th {
+    top: 40px;
+  }
+
+  .table-adaptive {
+    display: block;
+  }
+
+  /* Блок информации: */
+
+  .infoblock .head {
+    background: #53606F;
+  }
+
+  .infoblock .head .title {
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    color: #FFFFFF;
+  }
+
+  .infoblock .head .open.icon {
+    display: block;
+  }
+
+  /* Блок фильтров: */
+
+  .pop-up-container.filters {
+    padding: 40px 0;
+    background-color: rgba(102, 102, 102, 0.3);
+  }
+
+  .filters .pop-up {
+    display: block;
+    width: 40em;
+    position: relative;
+    max-width: 90%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(52, 73, 94, 0.1), 0px 2px 10px rgba(52, 73, 94, 0.06), 0px 0px 5px rgba(52, 73, 94, 0.05);
+    transform-origin: 0 0;
+  }
+
+  .filters .pop-up-title,
+  .filters .pop-up-body > .title.row {
+    display: flex;
+    margin-bottom: 0;
+    padding: 1.785em 2.5em;
+  }
+
+  .filters .group > .title.row {
+    padding: 0.714em 2.5em;
+  }
+
+  .filters .group > .switch-cont {
+    padding: 0 2.5em;
+  }
+
+  .filters .btns-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  /* Блок фильтров видимый на всех разрешениях: */
+
+  .pop-up-container.filters.visible {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+
+  .pop-up-container.filters.visible.open {
+    opacity: 1;
+  }
+
+  .filters.visible .pop-up {
+    opacity: 1;
+  }
+
+  /* Окно уведомлений: */
+
+  #notifications .pop-up {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  /* Кнопка "Наверх страницы": */
+
+  #up-btn {
+    width: 25px;
+    height: 20px;
+    right: 2.4rem;
+    bottom: 15px;
+  }
+
+  /* Футер */
+
+  #footer .wrap {
+    font-size: 0.857em;
+    padding: 0.8rem 0;
+  }
+
+  /* Изображение на весь экран: */
+
+  #full-img .carousel .left-btn {
+    opacity: 1 !important;
+  }
+  #full-img .carousel .right-btn {
+    opacity: 1 !important;
+  }
+}
+
+/* Стили на ширину от 0 до 960px включительно: */
+@media only screen and (max-width: 960px) {
+  /* Окно уведомлений: */
+  #notifications .message.icon {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 0.357em;
+  }
+
+  #notifications .message.row > .row {
+    display: block;
+  }
+
+  #notifications .date {
+    position: absolute;
+    top: 1.5em;
+    left: 35px;
+  }
+  .orderTable .row{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .row .sumR{
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+  .row .textR{
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .typeO{
+    text-align: right;
+  }
+}
+
+/* =====================================================================================================
+Mobile:
+===================================================================================================== */
+
+/* Стили на ширину от 0 до 599px включительно: */
+@media only screen and (max-width: 599px) {
+
+  /* Основные стили: */
+
+  body.no-scroll {
+    position: fixed;
+    overflow: hidden;
+  }
+
+  .container {
+    margin: 0 1.6rem;
+  }
+
+  input:not([type="submit"]) {
+    padding: 0.25em 0.714em;
+  }
+
+  textarea {
+    padding: 0.25em 0.714em;
+  }
+
+  select {
+    padding: 0.25em 1.7em 0.25em 0.714em;
+  }
+
+  .activate .head {
+    padding: 0.25em 0.714em;
+  }
+
+  /* Стили текста: */
+
+  .h0 {
+    font-size: 1.714em;
+  }
+
+  /* Заголовок страницы: */
+
+  #main-header {
+    padding: 1.6rem 0;
+  }
+
+  /* Поля поиска: */
+
+  form.search .search.icon,
+  form.search .close.icon {
+    height: 24px;
+  }
+
+  /* Всплывающие окна: */
+
+  .pop-up-container,
+  .pop-up-container.filters {
+    padding: 0;
+  }
+
+  .pop-up {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    padding: 1.5em;
+  }
+
+  .pop-up-title {
+    margin-bottom: 1em;
+  }
+
+  .pop-up-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  /* Принудительно убранные всплывающие окна : */
+
+  .pop-up-container.locked {
+    position: fixed;
+    padding: 0;
+    z-index: 400;
+  }
+
+  /* Форма отправки на сервер: */
+
+  .pop-up-body form.post {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  form.post .form-cols {
+    display: block;
+  }
+
+  form.post .form-cols > div {
+    width: 100%;
+    padding: 0;
+  }
+
+  form.post input[data-type="date"],
+  form.post input[data-type="range"],
+  form.post .activate {
+    width: 100%;
+  }
+
+  /* Блок фильтров (в т.ч. видимый на всех разрешениях): */
+
+  .filters .pop-up,
+  .filters.visible .pop-up {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+  }
+
+  .pop-up .pop-up-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .filters .pop-up-title,
+  .filters .pop-up-body > .title.row {
+    padding: 1em 1.428em;
+  }
+
+  .filters .group > .title.row {
+    padding: 0.714em 1.428em;
+  }
+
+  .filters .group > .switch-cont {
+    padding: 0 1.428em;
+  }
+
+  /* Системное сообщение: */
+
+  #alerts .pop-up {
+    display: block;
+    flex-grow: 0;
+    width: auto;
+    max-width: 90%;
+    min-height: auto;
+  }
+
+  /* Информационная карточка товара: */
+
+  .info-card .card-content {
+    display: block;
+  }
+
+  .info-card .card-content > div {
+    width: 100%;
+  }
+
+  .info-card .img-wrap {
+    max-width: 360px;
+    margin: 0 auto;
+    margin-bottom: 1.428em;
+  }
+
+  /* Панель управления: */
+
+  .control {
+    width: 100vw;
+    margin: 0 -1.6rem;
+  }
+
+  /* Блок информации: */
+
+  .table-adaptive {
+    margin: 0 -1.6rem;
+  }
+
+  .infoblock {
+    margin-bottom: 0.714em;
+  }
+
+  /* Изображение на весь экран: */
+
+  #full-img .carousel .left-btn,
+  #full-img .carousel .right-btn {
+    display: none;
+  }
+
+  #full-img .carousel-nav {
+    bottom: -2em;
+  }
+
+  #full-img .carousel-nav > div {
+    background-color: #FFFFFF;
+  }
+}
