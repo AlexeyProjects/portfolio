@@ -1,0 +1,146 @@
+<div class="content">
+				<h1>Дисплеи</h1>
+				<table id="displaystable" class="display" style="width:100%;" cellspacing="0">
+        <thead class=" padding">
+            <tr class="c1">
+                <th>ID Дисплея</th>
+                <th>	</th>
+                <th>Адрес</th>
+                <th>Город</th>
+                <th>Контакт</th>
+                <th>Телефон</th>
+                <th>Последний запуск</th>
+                <th>Сессии</th>
+                <th>Заказы</th>
+                <th>Конверсия</th>
+                <th>Настройки</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" ></script>
+<script type="text/javascript">
+    fetch('api.php', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: JSON.stringify({type: "getDisplays"})
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            
+            console.log(data);
+
+            let dataForTable = new Array();
+            
+            let names = ["device_id", "address", "city", "contact", "phone", "last_auth"];
+            data["device"].forEach(element => {
+                let row = new Object();
+                names.forEach(name => row[name] = element[name]);
+                dataForTable.push(row);
+            });
+            dataForTable.forEach(element =>{
+                element["session"] = "-";
+                element["orders"] = "-";
+            })
+            data["event"].forEach(element => {
+                if (element["eventid"] == "1")
+                {
+                    dataForTable.forEach(device =>{
+                        if (device["device_id"] == element["deviceid"])
+                        {
+                            device["session"] = element["event"];
+                        }
+                    })
+                }
+                else if (element["eventid"] == "13")
+                {
+                    dataForTable.forEach(device => {
+                        if (device["device_id"] == element["deviceid"])
+                        {
+                            device["orders"] = element["event"];
+                        }
+                    })
+                }
+            })
+
+            dataForTable.forEach(element =>{
+                if ((element["orders"] != "-") && (element["session"] != "-"))
+                {
+                    element["conversion"] = element["orders"] / element["session"];
+                }
+                else
+                {
+                    element["conversion"] = "-";
+                }
+                element["settings"] = "<a href=\"settings.php\">Настройки";
+            })
+
+
+            dataForTable.forEach(element => {
+            	data["device"].forEach(device => {
+            		if (element["device_id"] == device["device_id"])
+            		{
+            			let id = element["device_id"];
+            			if (device["active"] == "1")
+            			{
+            				element["device_status"] = " <div class=\"indicate dotgreen\"></div>";
+            			}
+            			else
+            			{
+            				element["device_status"] = " <div class=\"indicate dotred\"></div>";
+            			}
+            			return;
+            		}
+            		/*
+            		else
+            		{
+            			let id = element["device_id"];
+            			element["device_id"] = " <div class=\"indicate dotred\">" + id + "</div>";
+            			return;
+            		}
+            		*/
+            	});
+            })
+
+
+            console.log(dataForTable);
+
+            $('#displaystable').DataTable( {
+                "data": dataForTable,
+                "columns": [
+                    { "data": "device_id" },
+                    { "data": "device_status"},
+                    { "data": "address"},
+                    { "data": "city"},
+                    { "data": "contact"},
+                    { "data": "phone"},
+                    { "data": "last_auth"},
+                    { "data": "session"},
+                    { "data": "orders"},
+                    { "data": "conversion"},
+                    { "data": "settings"}
+                ],
+                "iDisplayLength": 100,
+                "lengthChange": false,
+                "searching": true,
+                "info": false,
+                "paging": true,
+                "bpaginate": true,
+                "aoColumnDefs" : [ {
+            		'bSortable' : false,
+            		'aTargets' : [ 1 ]
+        		} ],
+                "language": 
+                {
+                    "search": "Поиск:"
+                }
+            });
+        });
+        
+</script>
+	

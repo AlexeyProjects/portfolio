@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>StorPad</title>
+
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/media.css">
+		<link rel="icon" type="image/gif" href="img/favicon.svg">
+
+		
+		<!-- Custom styles for this template -->
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<!--header leftmenu-->
+		<div class="leftmenu">
+			<div class="nav">
+				<a href="index.html"><img src="img/logotype.svg" alt="Логотип"></a>
+			<div class="navbar">
+				
+				<a href="index.html"><div class="icon imgMain"></div>Главная</a>
+				<a href="orders.html"><div class="icon imgOrder"></div>Заказы</a>
+				<a href="clients.html"><div class="icon imgClients"></div>Клиенты</a>
+				<a href="displays.html"><div class="icon imgDisplay"></div>Дисплей</a>
+			</div>
+			</div>
+			<hr>
+		</div>
+		<!--header leftmenu-->
+		<!--header main-->
+		<div class="main">
+			<!--header header-->
+			<div class="header">
+			<div class="personalAreaBar">
+				<a href="#"><img src="img/avatar.svg" alt="Аватар" class="icon imgAvatar iconLarge"><p class="name">Lestate15</p></a>
+				<a href="" class="icon imgNotification iconLarge notifyDrop"></a>
+			</div>
+			</div>
+			<!--header header-->
+
+			<!--header content-->
+			<div class="content">
+				<div class="contentHeader">
+									<h1>Рабочий стол</h1>
+						<div class="filterPanel">Период:
+						<select>
+							<option class="option">7 дней</option>
+						<option class="option">Этот месяц</option>
+						<option class="option">Сегодня</option>
+						</select>
+						
+					    </div>
+				</div>
+
+				<div class="orderstatus">
+					<div class="status window">
+						<div class="statusHeader"><h2>Статус заказов</h2></div>
+						<hr>
+						<div id="piechart_3d" style="width: 98%; height: 40rem;"></div>
+					</div>
+					<div class="info window">
+						<div class="statusHeader"><h2>Статус сессий </h2>
+
+						</div>
+						<hr>
+						<div class="infocontent">
+							<div class="tabletitles">
+								<div class="tabletitle">Сессии</div>
+								<div class="tabletitle">Открытие карточек</div>
+								<div class="tabletitle">Заказов</div>
+							</div>
+							<div class="tablevalues">
+								<div class="tablevalue">1389</div>
+								<div class="tablevalue">2104</div>
+								<div class="tablevalue">41</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="orderPays">
+					<div class="window windowLarge">
+					<div class="statusHeader">
+						<h2>Заказы и оплаты </h2>
+					</div>
+					<hr>
+					 <div class="windowContent">
+					 	<div id="chart_div" style="width: 100%; height: 100%;">
+					 </div>
+					 </div>
+					</div>
+				</div>
+				
+			</div>
+			<!--header content-->
+			
+		</div>
+				<div class="popupnotification">
+    		<div class="popupnotification-content">
+    			<div class="popupnotificationheader">
+    				<div class="icon iconSmall iconPopupnotification"></div>
+    				Уведомления
+    			</div>
+        <div class="notificationcontent">
+        	<div class="notifyrow">
+        		<div class="notifytime">2 часа назад</div>
+        		<div class="notifymessage">Изменено время проведения встречи «Обсуждение вопросов по сайту StorPad.com» с вашим участиемс 17.10.2019 11:00:00, на 16.10.2019 11:00:00</div>
+        		<div class="notifyreview"><a href="#">Посмотреть подробности</a></div>
+        	</div>
+        	<div class="notifyrow">
+        		<div class="notifytime">2 часа назад</div>
+        		<div class="notifymessage">Изменено время проведения встречи «Обсуждение вопросов по сайту StorPad.com» с вашим участиемс 17.10.2019 11:00:00, на 16.10.2019 11:00:00</div>
+        		<div class="notifyreview"><a href="#">Посмотреть подробности</a></div>
+        	</div>
+        	<div class="notifyrow">
+        		<div class="notifytime">2 часа назад</div>
+        		<div class="notifymessage">Изменено время проведения встречи «Обсуждение вопросов по сайту StorPad.com» с вашим участиемс 17.10.2019 11:00:00, на 16.10.2019 11:00:00</div>
+        		<div class="notifyreview"><a href="#">Посмотреть подробности</a></div>
+        	</div>
+        	<div class="notifyrow">
+        		<div class="notifytime">2 часа назад</div>
+        		<div class="notifymessage">Изменено время проведения встречи «Обсуждение вопросов по сайту StorPad.com» с вашим участиемс 17.10.2019 11:00:00, на 16.10.2019 11:00:00</div>
+        		<div class="notifyreview"><a href="#">Посмотреть подробности</a></div>
+        	</div>
+
+        </div>
+    		</div>
+		</div>
+		<!--header main-->
+		<script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script src="js/linechart.js"></script>
+
+		<script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Name');
+    data.addColumn('number', 'Value');
+    data.addColumn({type: 'string', role: 'style'});
+    data.addRows([
+    	['В пути к клиенту', 3, 'color: #B999FA'],
+        ['Возврат', 5, 'color: #FAA871'],
+        ['Ожидает оплаты', 7, 'color: #696DA1']
+    ]);
+        var options = {
+          pieHole: 0.75,
+          pieSliceText: 'none',
+          'colors' : ["#B999FA","#FAA871", "#696DA1"]
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+
+    </script>	
+		<script src="js/script.js"></script>
+
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	</body>
+
+</html>

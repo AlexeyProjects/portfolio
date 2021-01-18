@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://storpad.com/adm/main.html -->
+<html lang="ru" class="wf-gilroymedium-n4-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>StorPad</title>
+        <link rel="shortcut icon" href="./StorPad_files/page-ic.png">
+        <link rel="stylesheet" href="./StorPad_files/fonts.css">
+        <link rel="stylesheet" href="./StorPad_files/style.css">
+        <script type="text/javascript" src="./StorPad_files/loader.js.Без названия"></script>
+        <script type="text/javascript" src="./StorPad_files/cms.js.Без названия"></script>
+    <script type="text/javascript" charset="UTF-8" src="./StorPad_files/loader.js(1).Без названия"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="./StorPad_files/tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./StorPad_files/util.css"><script type="text/javascript" charset="UTF-8" src="./StorPad_files/jsapi_compiled_default_module.js.Без названия"></script><script type="text/javascript" charset="UTF-8" src="./StorPad_files/jsapi_compiled_graphics_module.js.Без названия"></script><script type="text/javascript" charset="UTF-8" src="./StorPad_files/jsapi_compiled_ui_module.js.Без названия"></script><script type="text/javascript" charset="UTF-8" src="./StorPad_files/jsapi_compiled_corechart_module.js.Без названия"></script><link rel="stylesheet" type="text/css" href="chrome-extension://pgjndpcilbcanlnhhjmhjalilcmoicjc/styles.css"><link rel="stylesheet" type="text/css" href="chrome-extension://onbkopaoemachfglhlpomhbpofepfpom/styles.css"><script type="text/javascript" charset="UTF-8" src="./StorPad_files/jsapi_compiled_fw_module.js.Без названия"></script><script type="text/javascript" charset="UTF-8" src="./StorPad_files/dygraph-tickers-combined.js.Без названия"></script><script type="text/javascript" charset="UTF-8" src="./StorPad_files/webfont.js.Без названия"></script><link rel="stylesheet" href="./StorPad_files/css"><script type="text/javascript" charset="UTF-8" src="./StorPad_files/jsapi_compiled_line_module.js.Без названия"></script></head>
+    <body id="body">
+    <div id="load-wrapper" style="display: none;">
+        <div id="preloader">
+            <div id="loader"></div>
+        </div>
+    </div>
+
+<style>
+  .active {
+      font-weight: bold;
+  }
+</style>
+
+        <script>
+            var e;
+            var d=document;
+            var filters_cookie_name="filters_status";
+            var mass_delim=",";
+            var opened_filters=new Array();
+
+            function setCookie(name, value) {
+                document.cookie = name+"="+value+";SameSite=Lax;";
+                //console.log(value);
+                //document.getElementById('script_multilingualism').innerHTML = "<script src='js/cms_content_"+ value +".js' id='sc'><\/script>";
+                //document.getElementById('script_multilingualism').removeChild(document.createElement('script').src = "js/cms_content_"+ value +".js");
+                //var sc = document.createElement('script').src = "js/cms_content_"+ value +".js";
+                //document.getElementById('script_multilingualism').appendChild(sc);
+                //script_multilingualism.inner = document.createElement('script').src = "js/language_eng.js";
+                // document.write("<script src='js/cms_content_"+ value +".js'><\/script>");
+                // document.write("<scr"+"ipt src='js/cms_content_"+ value +".js'></s"+"cript>");
+
+
+
+                /*Удаление старого скрипта*/
+                /*
+
+                var el =  document.getElementById('script_multilingualism').getElementsByTagName('script')[0];
+                document.getElementById('script_multilingualism').removeChild(el);
+                /*-------------------*/
+
+
+
+                /*Создание и добавление нового*/
+                /*
+
+                var sc = document.createElement('script');
+                sc.src = "js/cms_content_"+ value +".js";
+                document.getElementById('script_multilingualism').appendChild(sc);
+                /*-------------------*/
+
+
+
+
+                /*document.getElementById('script_multilingualism').innerHTML = "<script src='js/cms_content_"+ value +".js' id='sc'><\/script>";*/
+                //console.log('filters_status');
+                /*if('filters_status' == 'en') {
+                    document.write("<scr"+"ipt src='js/cms_content_en.js'></s"+"cript>");
+                    location.reload();
+                }
+                if('filters_status' == 'ru') {
+                    document.write("<scr"+"ipt src='js/cms_content_ru.js'></s"+"cript>");
+                    location.reload();
+                }
+                console.log(value + ' - value');
+                console.log(filters_cookie_name + ' - filters_cookie_name');*/
+
+location.reload();
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            function getCookie(name) {
+                let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+                return matches ? decodeURIComponent(matches[1]) : undefined;
+            }
+
+            function t() {var ex = e || window.event; var target = ex.target || ex.srcElement; status_toggle(ex.target.id,1);}
+
+            //function toggleI() {var ex = e || window.event; var target = ex.target || ex.srcElement; status_toggle(ex.target.id,1);}
+            //function checkboxT() {var ex = e || window.event; var target = ex.target || ex.srcElement; status_toggle(ex.target.id,1);}
+
+
+
+            function status_toggle(id, setcookie) {
+                var x=d.getElementById(id);
+                if(x.classList.contains("divopen")) {
+                    x.classList.add("divclosed");
+                    x.classList.remove("divopen");
+                    if(setcookie) {
+                        cookie_toggle(id);
+                    }
+                } else {
+                    x.classList.add("divopen");
+                    x.classList.remove("divclosed");
+                    if(setcookie) {
+                        cookie_toggle(id);
+                    }
+                }
+                console.log(setcookie + ' - setcookie');
+                console.log(id + ' - id');
+            }
+
+
+
+            function cookie_toggle(id){
+                var t=getCookie(filters_cookie_name);
+                t=id;
+                setCookie(filters_cookie_name, t);
+            }
+
+
+
+
+
+
+
+
+
+            /*function status_toggle(id, setcookie) {
+                var x=d.getElementById(id);
+                if(x.classList.contains("divopen")) {
+                    x.classList.add("divclosed");
+                    x.classList.remove("divopen");
+                    if(setcookie) {
+                        cookie_remove(id);
+                    }
+                } else {
+                    x.classList.add("divopen");
+                    x.classList.remove("divclosed");
+                    if(setcookie) {
+                        cookie_add(id);
+                    }
+                }
+            }
+
+
+            function cookie_add(id) {
+                var t=getCookie(filters_cookie_name);
+                /!*if(typeof t == "undefined") {
+                    t="";
+                }*!/
+                t=id;
+                setCookie(filters_cookie_name, t);
+            }
+
+            function cookie_remove(id) {
+                var t=getCookie(filters_cookie_name);
+                /!*if(typeof t == "undefined") {
+                    t="";
+                }*!/
+                setCookie(
+                    filters_cookie_name,
+                    t.replace(id,"").replace(mass_delim+id,"")
+                );
+            }*/
+
+
+            /*function cookie_add(id) {
+                var t=getCookie(filters_cookie_name);
+                if(typeof t == "undefined") {
+                    t="";
+                }
+                t=t+mass_delim+id;
+                setCookie(filters_cookie_name, t);
+            }
+
+            function cookie_remove(id) {
+                var t=getCookie(filters_cookie_name);
+                if(typeof t == "undefined") {
+                    t="";
+                }
+                setCookie(
+                    filters_cookie_name,
+                    t.replace(id,"").replace(mass_delim+id,"")
+                );
+            }*/
+
+            function process_cookie() {
+                var tc=getCookie(filters_cookie_name); if(typeof tc == "undefined") {tc="";} tc=tc.substr(1);
+                if(tc>"") {var nowopened=tc.split(mass_delim); for(i=0;i<nowopened.length;i++) {status_toggle(nowopened[i],0);} }
+            }
+
+            //function clearopenedfilters() {setCookie(filters_cookie_name,"");location.reload();}
+            /*function tsid(){
+                console.log(123);
+                console.log(document.getElementById('sc'));
+                document.getElementById('sc').src = "js/cms_content_,en.js";
+            }*/
+
+
+        </script>
+
+
+        <!--ASIDE MENU-PANEL-->
+        <aside class="aside1">
+            <div class="closeMenu"></div>
+            <div class="logo">
+                <a href="http://storpad.com/adm/main.html#">
+                    <img src="./StorPad_files/logo-account.svg" alt="logo" class="logo-img">
+                </a>
+            </div>
+            <ul id="menu" class="">
+                <li class="item-active"><a href="http://storpad.com/adm/main.html">Главная</a></li>
+            
+                <li class=""><a href="http://storpad.com/adm/orders.html">Заказы</a></li>
+            
+                <li class=""><a href="http://storpad.com/adm/customers.html">Клиенты</a></li>
+            
+                <li class=""><a href="http://storpad.com/adm/displays.html">Дисплей</a></li>
+            </ul>
+           <!-- <div class="options">
+                <div class="options-ic">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="options-descr">Settings</div>
+            </div>-->
+        </aside>
+
+        <!--ASIDE MOBILE -->
+        <aside class="aside2">
+            <div class="logo">
+                <a href="http://storpad.com/adm/main.html#">
+                    <img src="./StorPad_files/page-ic.png" alt="logo" class="logo-img">
+                </a>
+            </div>
+            <ul class="menu">
+                <li class="item-active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="options">
+                <div class="options-ic">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="options-descr"></div>
+            </div>
+        </aside>
+
+        <!--DATA SPACE-->
+        <div class="wrapper" style="padding-left: 11vw;">
+            <!--HEADER-->
+            <header>
+                <div id="multilingualism" class="multilingualism">
+                    <a onclick="t()" datakey="0" id="ru" class="elem ru divopen">Ru</a>   <!-- href="#ru"-->
+                
+                    <a onclick="t()" datakey="1" id="en" class="elem en divclosed">En</a>   <!-- href="#en"-->
+                </div>
+
+                <div class="user-icon">
+                    <div class="modalWrap">
+                        <h3>Чтобы продолжить, пожалуйста, заполните ваш профиль</h3>
+                        <form action="http://storpad.com/adm/model.php" method="post">
+                            <div>
+                                <input name="name" class="input-data name" type="text">
+                                <label>Имя*</label>
+                            </div>
+                            <div>
+                                <input name="firstname" class="input-data firstname" type="text">
+                                <label>Фамилия*</label>
+                            </div>
+                            <div>
+                                <input name="phone" class="input-data phone" type="text">
+                                <label>Телефон*</label>
+                            </div>
+                            <div>
+                                <input name="email" class="input-data email" type="email">
+                                <label>Email*</label>
+                            </div>
+                            <button id="btn" disabled="">Заполнить</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="user" class="user-name template" style="display: block;">Lestate15</div>
+                <div class="notification"></div>
+            </header>
+
+
+            <!--DATA PANEL-->
+            <section class="data">
+                <!--MODAL WINDOW-->
+                <div id="modal" class="modal">
+
+                </div>
+                <!--NOTIFICATION WINDOW-->
+                <div id="modal1" class="modal1">
+                    <div class="modalWrap1 notifyWrap">
+                        <div class="header headerNotify">
+                            <div class="notifyInner">
+                                <div class="notify-ic">
+                                    <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.875 11.0769V11.2826L11.0197 11.4287L12.5 12.9236V13.0385H0.5V12.9236L1.98028 11.4287L2.125 11.2826V11.0769V6.97436C2.125 4.61799 3.34466 2.7662 5.3976 2.27499L5.78125 2.1832V1.78872V1.23077C5.78125 0.821248 6.10638 0.5 6.5 0.5C6.89362 0.5 7.21875 0.821248 7.21875 1.23077V1.78872V2.18288L7.60201 2.2749C9.64752 2.76604 10.875 4.62664 10.875 6.97436V11.0769ZM7.51026 14.859C7.32566 15.2388 6.93869 15.5 6.5 15.5C6.05637 15.5 5.6712 15.2393 5.48827 14.859H7.51026Z" stroke="white"></path>
+                                    </svg>
+                                </div>
+                                <div>Уведомления</div>
+                            </div>
+                            <div class="closeNotify"></div>
+                        </div>
+                        <div id="notifications" class="bodyNotify">
+                            <div class="notify">
+                                <div class="time"><span>2 часа</span> 2 часа</div>
+                                <div class="message">Изменено время проведения встречи "Обсуждение вопросов по сайту StorPad.com с вашим участием 17.10.2019 11:00, на 19.10.2019 11:00</div>
+                                <div class="more">Посмотреть подробности</div>
+                            </div>
+                        
+                            <div class="notify">
+                                <div class="time"><span>05.10.19</span> 05.10.19</div>
+                                <div class="message">В задачах есть целый ряд классных инструментов, которые могут сделать работу с ними куда быстрее и удобнее. Я расскажу, как ими пользоваться и как они могут быть полезны вашей компании</div>
+                                <div class="more">Посмотреть подробности</div>
+                            </div>
+                        
+                            <div class="notify">
+                                <div class="time"><span>05.10.19</span> 05.10.19</div>
+                                <div class="message">В задачах есть целый ряд классных инструментов, которые могут сделать работу с ними куда быстрее и удобнее. Я расскажу, как ими пользоваться и как они могут быть полезны вашей компании</div>
+                                <div class="more">Посмотреть подробности</div>
+                            </div>
+                        
+                            <div class="notify">
+                                <div class="time"><span>05.10.19</span> 05.10.19</div>
+                                <div class="message">В задачах есть целый ряд классных инструментов, которые могут сделать работу с ними куда быстрее и удобнее. Я расскажу, как ими пользоваться и как они могут быть полезны вашей компании</div>
+                                <div class="more">Посмотреть подробности</div>
+                            </div>
+                        
+                            <div class="notify">
+                                <div class="time"><span>05.10.19</span> 05.10.19</div>
+                                <div class="message">В задачах есть целый ряд классных инструментов, которые могут сделать работу с ними куда быстрее и удобнее. Я расскажу, как ими пользоваться и как они могут быть полезны вашей компании</div>
+                                <div class="more">Посмотреть подробности</div>
+                            </div>
+                        
+                            <div class="notify">
+                                <div class="time"><span>05.10.19</span> 05.10.19</div>
+                                <div class="message">В задачах есть целый ряд классных инструментов, которые могут сделать работу с ними куда быстрее и удобнее. Я расскажу, как ими пользоваться и как они могут быть полезны вашей компании</div>
+                                <div class="more">Посмотреть подробности</div>
+                            </div>
+                        
+                            <div class="notify">
+                                <div class="time"><span>05.10.19</span> 05.10.19</div>
+                                <div class="message">В задачах есть целый ряд классных инструментов, которые могут сделать работу с ними куда быстрее и удобнее. Я расскажу, как ими пользоваться и как они могут быть полезны вашей компании</div>
+                                <div class="more">Посмотреть подробности</div>
+                            </div>
+                        
+                            <div class="notify">
+                                <div class="time"><span>05.10.19</span> 05.10.19</div>
+                                <div class="message">В задачах есть целый ряд классных инструментов, которые могут сделать работу с ними куда быстрее и удобнее. Я расскажу, как ими пользоваться и как они могут быть полезны вашей компании</div>
+                                <div class="more">Посмотреть подробности</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="dataTop">
+                    <h1>Рабочий стол</h1>
+                    <div>
+                        <div class="topPanel">Показать:
+                            <select class="select" name="" id="selection-diagrams">
+                                <option datakey="30" selected="selected">Этот месяц</option>
+                                <option datakey="7">За 7 дней</option>
+                                <option datakey="Today">Сегодня</option>
+                            </select>
+                        </div>
+                        <div class="set-ic"></div>
+                    </div>
+                </div>
+                <div class="dataMain">
+                    <!--ALL STATISTICS-->
+                    <div class="col_1">
+                        <div class="col_space">
+                            <!--Orders status-->
+                            <div class="">
+                                <div class="block block0">
+                                    <div class="header">
+                                        <h2>Статус заказов</h2>
+                                        <div>
+                                            <div class="topPanel">Показать:
+                                                <select class="select" name="" id="selection-donut">
+                                                    <option datakey="30">Этот месяц</option>
+                                                    <option datakey="7">За 7 дней</option>
+                                                    <option datakey="Today">Сегодня</option>
+                                                </select>
+                                            </div>
+                                            <div class="set-ic"></div>
+                                        </div>
+                                    </div>
+                                    <!-- <img src="i/content/chart.png" alt=""> -->
+                                    <div class="info-wrapper">
+                                        <div class="donut-wrapper">
+                                            <div id="donutchart" style="width: 100%; height:400px"></div>
+                                        </div>
+                                        <!--<div class="table-wrapper">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>Сессии</th>
+                                                    <th>открытие карточек</th>
+                                                    <th>Заказов</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id ="events-table">
+                                                <tr>
+                                                    <th>#session#</th>
+                                                    <th>#card#</th>
+                                                    <th>#orders#</th>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>-->
+                                        <div class="table-wrapper">
+                                            <div class="table-titles">
+                                                <div class="table-title">Сессии</div>
+                                                <div class="table-title">Открытие карточек</div>
+                                                <div class="table-title">Заказов</div>
+                                            </div>
+                                            <div class="table-values" id="events-table">
+                                                <div class="table-value">1389</div>
+                                                <div class="table-value">2104</div>
+                                                <div class="table-value">41</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Display orders distribution-->
+                            <div class="section-block">
+                                <div class="block block2">
+                                    <div class="header">
+                                        <h2>Заказы и оплата</h2>
+                                        <div>
+                                            <div class="topPanel">Показать:
+                                                <select class="select" name="" id="selection-line">
+                                                    <option datakey="30">Этот месяц</option>
+                                                    <option datakey="7">За 7 дней</option>
+                                                    <option datakey="Today">Сегодня</option>
+                                                </select>
+                                            </div>
+                                            <div class="set-ic"></div>
+                                        </div>
+                                    </div>
+                                    <!-- <img src="i/content/chart2.png" alt=""> -->
+                                    <div id="chart_div2" style="height:400px;"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 1325px; height: 400px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="1325" height="400" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_0"><clippath id="_ABSTRACT_RENDERER_ID_1"><rect x="133" y="77" width="1060" height="247"></rect></clippath></defs><rect x="0" y="0" width="1325" height="400" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="1208" y="77" width="30" height="15" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><rect x="1208" y="77" width="30" height="15" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><path d="M1208,84.5L1238,84.5" stroke="#f96e7d" stroke-width="2" fill-opacity="1" fill="none"></path><circle cx="1223" cy="84.5" r="3.5" stroke="none" stroke-width="0" fill="#f96e7d"></circle></g></g><g><rect x="133" y="77" width="1060" height="247" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(http://storpad.com/adm/main.html#_ABSTRACT_RENDERER_ID_1)"><g><rect x="133" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="133" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="170" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="206" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="206" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="243" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="279" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="279" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="316" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="352" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="352" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="389" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="425" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="425" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="462" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="498" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="498" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="535" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="571" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="571" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="608" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="644" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="644" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="681" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="717" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="717" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="754" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="790" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="790" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="827" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="863" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="863" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="900" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="936" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="936" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="973" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="1009" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="1009" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="1046" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="1082" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="1082" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="1119" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="1155" y="77" width="1" height="247" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="1155" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="1192" y="319" width="1" height="5" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="133" y="323" width="1060" height="1" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="133" y="274" width="1060" height="1" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="133" y="225" width="1060" height="1" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="133" y="175" width="1060" height="1" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="133" y="126" width="1060" height="1" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="133" y="77" width="1060" height="1" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="133" y="298" width="1060" height="1" stroke="none" stroke-width="0" fill="#f7f8f9"></rect><rect x="133" y="249" width="1060" height="1" stroke="none" stroke-width="0" fill="#f7f8f9"></rect><rect x="133" y="200" width="1060" height="1" stroke="none" stroke-width="0" fill="#f7f8f9"></rect><rect x="133" y="151" width="1060" height="1" stroke="none" stroke-width="0" fill="#f7f8f9"></rect><rect x="133" y="102" width="1060" height="1" stroke="none" stroke-width="0" fill="#f7f8f9"></rect></g><g><rect x="133" y="323" width="1060" height="1" stroke="none" stroke-width="0" fill="#ebedf0"></rect></g><g><path d="M133.5,252.84879999999998L243.05172413793105,95.75319999999999L900.3620689655173,235.0384L498.6724137931035,235.0384L717.7758620689656,173.2924L936.8793103448277,172.948L973.3965517241379,78.9514L1009.9137931034483,262.7134L1192.5,259.3924" stroke="#f96e7d" stroke-width="2" fill-opacity="1" fill="none"></path></g></g><g><circle cx="133.5" cy="252.84879999999998" r="3.5" stroke="none" stroke-width="0" fill="#f96e7d"></circle><circle cx="243.05172413793105" cy="95.75319999999999" r="3.5" stroke="none" stroke-width="0" fill="#f96e7d"></circle><circle cx="900.3620689655173" cy="235.0384" r="3.5" stroke="none" stroke-width="0" fill="#f96e7d"></circle><circle cx="498.6724137931035" cy="235.0384" r="3.5" stroke="none" stroke-width="0" fill="#f96e7d"></circle><circle cx="717.7758620689656" cy="173.2924" r="3.5" stroke="none" stroke-width="0" fill="#f96e7d"></circle><circle cx="936.8793103448277" cy="172.948" r="3.5" stroke="none" stroke-width="0" fill="#f96e7d"></circle><circle cx="973.3965517241379" cy="78.9514" r="3.5" stroke="none" stroke-width="0" fill="#f96e7d"></circle><circle cx="1009.9137931034483" cy="262.7134" r="3.5" stroke="none" stroke-width="0" fill="#f96e7d"></circle><circle cx="1192.5" cy="259.3924" r="3.5" stroke="none" stroke-width="0" fill="#f96e7d"></circle></g><g><g><text text-anchor="middle" x="133.5" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">3 Aug</text></g><g><text text-anchor="middle" x="206.5344827586207" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">5 Aug</text></g><g><text text-anchor="middle" x="279.5689655172414" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">7 Aug</text></g><g><text text-anchor="middle" x="352.6034482758621" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">9 Aug</text></g><g><text text-anchor="middle" x="425.6379310344828" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">11 Aug</text></g><g><text text-anchor="middle" x="498.6724137931035" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">13 Aug</text></g><g><text text-anchor="middle" x="571.7068965517242" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">15 Aug</text></g><g><text text-anchor="middle" x="644.7413793103449" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">17 Aug</text></g><g><text text-anchor="middle" x="717.7758620689656" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">19 Aug</text></g><g><text text-anchor="middle" x="790.8103448275863" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">21 Aug</text></g><g><text text-anchor="middle" x="863.844827586207" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">23 Aug</text></g><g><text text-anchor="middle" x="936.8793103448277" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">25 Aug</text></g><g><text text-anchor="middle" x="1009.9137931034483" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">27 Aug</text></g><g><text text-anchor="middle" x="1082.9482758620688" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">29 Aug</text></g><g><text text-anchor="middle" x="1155.9827586206898" y="341.2" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">31 Aug</text></g><g><text text-anchor="end" x="121" y="327.7" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">0</text></g><g><text text-anchor="end" x="121" y="278.5" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">2,000</text></g><g><text text-anchor="end" x="121" y="229.29999999999998" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">4,000</text></g><g><text text-anchor="end" x="121" y="180.1" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">6,000</text></g><g><text text-anchor="end" x="121" y="130.9" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">8,000</text></g><g><text text-anchor="end" x="121" y="81.7" font-family="Gilroy_Medium" font-size="12" stroke="none" stroke-width="0" fill="#4c5862">10,000</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Aug 3, 2020</td><td>2,872</td></tr><tr><td>Aug 6, 2020</td><td>9,258</td></tr><tr><td>Aug 24, 2020</td><td>3,596</td></tr><tr><td>Aug 13, 2020</td><td>3,596</td></tr><tr><td>Aug 19, 2020</td><td>6,106</td></tr><tr><td>Aug 25, 2020</td><td>6,120</td></tr><tr><td>Aug 26, 2020</td><td>9,941</td></tr><tr><td>Aug 27, 2020</td><td>2,471</td></tr><tr><td>Sep 1, 2020</td><td>2,606</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 410px; left: 1335px; white-space: nowrap; font-family: Gilroy_Medium; font-size: 12px;">10,000</div><div></div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="block block1">
+                                <div class="header">
+                                    <h2>Распределение заказов по дисплеям</h2>
+                                    <div>
+                                        <div class="topPanel">
+                                            Показать:
+                                            <select class="select" name="" id="selection-bar">
+                                                <option datakey="30">Этот месяц</option>
+                                                <option datakey="7">За 7 дней</option>
+                                                <option datakey="Today">Сегодня</option>
+                                            </select>
+                                        </div>
+                                        <div class="set-ic"></div>
+                                    </div>
+                                </div>
+                                <!-- <img src="i/content/chart1.png" alt=""> -->
+                                <div id="chart_div" style="width: 100%; height: 17vw;"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 1325px; height: 272px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="1325" height="272" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"><clippath id="_ABSTRACT_RENDERER_ID_3"><rect x="133" y="52" width="1060" height="168"></rect></clippath></defs><rect x="0" y="0" width="1325" height="272" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="458" y="249" width="410" height="10" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><rect x="458" y="249" width="88" height="10" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="482" y="257.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#222222">Подтвержден</text></g><rect x="458" y="249" width="20" height="10" stroke="none" stroke-width="0" fill="#efedea"></rect></g><g><rect x="562" y="249" width="66" height="10" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="586" y="257.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#222222">Отменен</text></g><rect x="562" y="249" width="20" height="10" stroke="none" stroke-width="0" fill="#c5c3bf"></rect></g><g><rect x="644" y="249" width="142" height="10" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="668" y="257.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#222222">Ожидает подтверждения</text></g><rect x="644" y="249" width="20" height="10" stroke="none" stroke-width="0" fill="#b999fa"></rect></g><g><rect x="802" y="249" width="66" height="10" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="826" y="257.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#222222">Оплачен</text></g><rect x="802" y="249" width="20" height="10" stroke="none" stroke-width="0" fill="#696da1"></rect></g></g><g><rect x="133" y="52" width="1060" height="168" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(http://storpad.com/adm/main.html#_ABSTRACT_RENDERER_ID_3)"><g><rect x="133" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="221" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="310" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="398" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="486" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="574" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="663" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="751" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="839" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="927" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="1016" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="1104" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#ebedf0"></rect><rect x="1192" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#ebedf0"></rect></g><g><rect x="134" y="63" width="78" height="35" stroke="none" stroke-width="0" fill="#efedea"></rect><rect x="133" y="119" width="0.5" height="34" stroke="none" stroke-width="0" fill="#efedea"></rect><rect x="133" y="174" width="0.5" height="35" stroke="none" stroke-width="0" fill="#efedea"></rect><rect x="213" y="63" width="21" height="35" stroke="none" stroke-width="0" fill="#c5c3bf"></rect><rect x="133" y="119" width="0.5" height="34" stroke="none" stroke-width="0" fill="#c5c3bf"></rect><rect x="133" y="174" width="0.5" height="35" stroke="none" stroke-width="0" fill="#c5c3bf"></rect><rect x="235" y="63" width="32" height="35" stroke="none" stroke-width="0" fill="#b999fa"></rect><rect x="134" y="119" width="21" height="34" stroke="none" stroke-width="0" fill="#b999fa"></rect><rect x="134" y="174" width="8" height="35" stroke="none" stroke-width="0" fill="#b999fa"></rect><rect x="267" y="63" width="0.5" height="35" stroke="none" stroke-width="0" fill="#696da1"></rect><rect x="155" y="119" width="0.5" height="34" stroke="none" stroke-width="0" fill="#696da1"></rect><rect x="142" y="174" width="0.5" height="35" stroke="none" stroke-width="0" fill="#696da1"></rect></g><g><rect x="133" y="52" width="1" height="168" stroke="none" stroke-width="0" fill="#dfe0eb"></rect></g></g><g></g><g><g><text text-anchor="middle" x="133.5" y="234.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#444444">0</text></g><g><text text-anchor="middle" x="221.75" y="234.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#444444">25,000</text></g><g><text text-anchor="middle" x="310" y="234.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#444444">50,000</text></g><g><text text-anchor="middle" x="398.25" y="234.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#444444">75,000</text></g><g><text text-anchor="middle" x="486.5" y="234.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#444444">100,000</text></g><g><text text-anchor="middle" x="574.75" y="234.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#444444">125,000</text></g><g><text text-anchor="middle" x="663" y="234.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#444444">150,000</text></g><g><text text-anchor="middle" x="751.25" y="234.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#444444">175,000</text></g><g><text text-anchor="middle" x="839.5" y="234.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#444444">200,000</text></g><g><text text-anchor="middle" x="927.75" y="234.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#444444">225,000</text></g><g><text text-anchor="middle" x="1016" y="234.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#444444">250,000</text></g><g><text text-anchor="middle" x="1104.25" y="234.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#444444">275,000</text></g><g><text text-anchor="middle" x="1192.5" y="234.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#444444">300,000</text></g><g><text text-anchor="end" x="123" y="83.83333333333333" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#222222">9007005</text></g><g><text text-anchor="end" x="123" y="139.5" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#222222">9007009</text></g><g><text text-anchor="end" x="123" y="195.16666666666666" font-family="Gilroy_Medium" font-size="10" stroke="none" stroke-width="0" fill="#222222">9007015</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Orders</th><th>Подтвержден</th><th>Отменен</th><th>Ожидает подтверждения</th><th>Оплачен</th></tr></thead><tbody><tr><td>9007005</td><td>22,476</td><td>6,120</td><td>9,258</td><td>0</td></tr><tr><td>9007009</td><td>0</td><td>0</td><td>6,106</td><td>0</td></tr><tr><td>9007015</td><td>0</td><td>0</td><td>2,606</td><td>0</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 282px; left: 1335px; white-space: nowrap; font-family: Gilroy_Medium; font-size: 10px;">Оплачен</div><div></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--TABLE BLOCK-->
+                    <div class="col_1">
+                        <div class="section-block block block3">
+                            <div class="header">
+                                <h2>Распределение заказов по дисплеям</h2>
+                                <div>
+                                    <div class="topPanel">
+                                        Показать:
+                                        <select class="select" name="" id="selection-table">
+                                            <option datakey="30">Этот месяц</option>
+                                            <option datakey="7">За 7 дней</option>
+                                            <option datakey="Today">Сегодня</option>
+                                        </select>
+                                    </div>
+                                    <div class="set-ic"></div>
+                                </div>
+                            </div>
+                            <div class="table">
+                                <table cellspacing="0">
+                                    <thead>
+                                    <tr>
+                                        <th>ID заказа</th>
+                                        <th>Дата заказа</th>
+                                        <th>Кол-во</th>
+                                        <th>Сумма</th>
+                                        <th>id витрины</th>
+                                        <th>Статус</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="table-replace">    <tr>    
+                        <td>#9078</td>
+                        <td>26.08.2020</td>
+                        <td>29</td>
+                        <td>3060.00</td>
+                        <td>9007005</td>
+                 
+                        <td class="undefined">
+                        Подтвержден
+                        </td>
+                        </tr>    <tr>    
+                        <td>#9079</td>
+                        <td>26.08.2020</td>
+                        <td>30</td>
+                        <td>3060.00</td>
+                        <td>9007005</td>
+                 
+                        <td class="undefined">
+                        Подтвержден
+                        </td>
+                        </tr>    <tr>    
+                        <td>#9081</td>
+                        <td>27.08.2020</td>
+                        <td>32</td>
+                        <td>2471.00</td>
+                        <td>9007005</td>
+                 
+                        <td class="undefined">
+                        Подтвержден
+                        </td>
+                        </tr>    <tr>    
+                        <td>#9080</td>
+                        <td>26.08.2020</td>
+                        <td>31</td>
+                        <td>3821.00</td>
+                        <td>9007005</td>
+                 
+                        <td class="undefined">
+                        Подтвержден
+                        </td>
+                        </tr>    <tr>    
+                        <td>#9076</td>
+                        <td>25.08.2020</td>
+                        <td>27</td>
+                        <td>3060.00</td>
+                        <td>9007005</td>
+                 
+                        <td class="canceled">
+                        Отменен
+                        </td>
+                        </tr>    <tr>    
+                        <td>#9075</td>
+                        <td>24.08.2020</td>
+                        <td>26</td>
+                        <td>3596.00</td>
+                        <td>9007005</td>
+                 
+                        <td class="undefined">
+                        Подтвержден
+                        </td>
+                        </tr>    <tr>    
+                        <td>#9070</td>
+                        <td>13.08.2020</td>
+                        <td>25</td>
+                        <td>3596.00</td>
+                        <td>9007005</td>
+                 
+                        <td class="undefined">
+                        Подтвержден
+                        </td>
+                        </tr>    <tr>    
+                        <td>#9066</td>
+                        <td>03.08.2020</td>
+                        <td>23</td>
+                        <td>2872.00</td>
+                        <td>9007005</td>
+                 
+                        <td class="undefined">
+                        Подтвержден
+                        </td>
+                        </tr>    <tr>    
+                        <td>#9069</td>
+                        <td>06.08.2020</td>
+                        <td>24</td>
+                        <td>9258.00</td>
+                        <td>9007005</td>
+                 
+                        <td class="waiting">
+                        Ожидает подтверждения
+                        </td>
+                        </tr>    <tr>    
+                        <td>#9071</td>
+                        <td>19.08.2020</td>
+                        <td>3</td>
+                        <td>1400.00</td>
+                        <td>9007009</td>
+                 
+                        <td class="waiting">
+                        Ожидает подтверждения
+                        </td>
+                        </tr>    <tr>    
+                        <td>#9072</td>
+                        <td>19.08.2020</td>
+                        <td>4</td>
+                        <td>2100.00</td>
+                        <td>9007009</td>
+                 
+                        <td class="waiting">
+                        Ожидает подтверждения
+                        </td>
+                        </tr>    <tr>    
+                        <td>#9073</td>
+                        <td>19.08.2020</td>
+                        <td>5</td>
+                        <td>2606.00</td>
+                        <td>9007009</td>
+                 
+                        <td class="waiting">
+                        Ожидает подтверждения
+                        </td>
+                        </tr>    <tr>    
+                        <td>#9077</td>
+                        <td>25.08.2020</td>
+                        <td>28</td>
+                        <td>3060.00</td>
+                        <td>9007005</td>
+                 
+                        <td class="canceled">
+                        Отменен
+                        </td>
+                        </tr>    <tr>    
+                        <td>#9082</td>
+                        <td>01.09.2020</td>
+                        <td>56</td>
+                        <td>2606.00</td>
+                        <td>9007015</td>
+                 
+                        <td class="waiting">
+                        Ожидает подтверждения
+                        </td>
+                        </tr></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <script>
+            process_cookie();
+        </script>
+
+
+        <div id="script_multilingualism"><script src="./StorPad_files/cms_content_ru.js.Без названия"></script></div>
+
+        <script>
+
+            function get_cookie ( cookie_name )
+            {
+                var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+
+                if ( results )
+                    return ( unescape ( results[2] ) );
+                else
+                    return null;
+            }
+
+            async function GetUser(url){
+                let send = await fetch(url,
+                    {method:"GET"
+                    },
+                );
+                return await send.json();
+            }
+
+            let customers = fetch( 'http://storpad.com/adm/api-php/api.php',{
+                method: "POST",
+                headers: {
+                    /*'Content-Type': 'application/json'*/
+                },
+                body: JSON.stringify({type:"get-events"}),
+            });
+            customers.then((response)=>{
+                return response.json()
+            })
+            .then((response)=>{
+                console.log(response.jso);
+                let inr = document.getElementById('events-table').innerHTML;
+                inr = inr.replace('#session#',response.session);
+                inr = inr.replace('#card#',response.card);
+                inr = inr.replace('#orders#',response.orders);
+                document.getElementById('events-table').innerHTML = inr;
+                document.getElementById('load-wrapper').style.display = "none";
+            });
+            async function GetOrders(url){
+                let send = await fetch(url,
+                    {method:"GET"
+                    },
+                );
+                return await send.json();
+            }
+            /*var display_orders={
+                area:"display_orders",
+                type:"array",
+                items:[
+                    {
+                        id:1,
+                        orderId: '#12358',
+                        sum: '88 487,00',
+                        total: '68 487,00',
+                        class: 'waiting',
+                        status: 'Ожидает подтверждения'
+                    },
+                    {
+                        id:2,
+                        orderId: '#12358',
+                        sum: '58 487,00',
+                        total: '58 487,00',
+                        class: 'waiting',
+                        status: 'Ожидает подтверждения'
+                    },
+                    {
+                        id:3,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '15 487,00',
+                        class: 'refund',
+                        status: 'Возврат'
+                    },
+                    {
+                        id:4,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '14 100,00',
+                        class: 'waiting',
+                        status: 'Ожидает подтверждения'
+                    },
+                    {
+                        id:5,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '14 900,00',
+                        class: 'waiting',
+                        status: 'Ожидает подтверждения'
+                    },
+                    {
+                        id:6,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '15 487,00',
+                        class: 'done',
+                        status: 'Завершено'
+                    },
+                    {
+                        id:7,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '13 487,00',
+                        class: 'canceled',
+                        status: 'Отмена'
+                    },
+                    {
+                        id:8,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '15 487,00',
+                        class: 'canceled',
+                        status: 'Отмена'
+                    },
+                    {
+                        id:9,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '13 487,00',
+                        class: 'canceled',
+                        status: 'Отмена'
+                    },
+                    {
+                        id:10,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '15 487,00',
+                        class: 'refund',
+                        status: 'Возврат'
+                    },
+                    {
+                        id:11,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '15 487,00',
+                        class: 'refund',
+                        status: 'Возврат'
+                    },
+                    {
+                        id:12,
+                        orderId: '#12358',
+                        sum: '14 487,00',
+                        total: '14 487,00',
+                        class: 'done',
+                        status: 'Завершено'
+                    },
+                    {
+                        id:13,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '13 487,00',
+                        class: 'ontheway',
+                        status: 'В пути к клиенту'
+                    },
+                    {
+                        id:14,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '15 487,00',
+                        class: 'done',
+                        status: 'Завершено'
+                    },
+                    {
+                        id:15,
+                        orderId: '#12358',
+                        sum: '88 487,00',
+                        total: '68 487,00',
+                        class: 'waiting',
+                        status: 'Ожидает подтверждения'
+                    },
+                    {
+                        id:16,
+                        orderId: '#12358',
+                        sum: '58 487,00',
+                        total: '58 487,00',
+                        class: 'waiting',
+                        status: 'Ожидает подтверждения'
+                    },
+                    {
+                        id:17,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '15 487,00',
+                        class: 'refund',
+                        status: 'Возврат'
+                    },
+                    {
+                        id:18,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '14 100,00',
+                        class: 'done',
+                        status: 'Завершено'
+                    },
+                    {
+                        id:19,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '14 900,00',
+                        class: 'waiting',
+                        status: 'Ожидает подтверждения'
+                    },
+                    {
+                        id:20,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '15 487,00',
+                        class: 'done',
+                        status: 'Завершено'
+                    },
+                    {
+                        id:21,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '13 487,00',
+                        class: 'canceled',
+                        status: 'Отмена'
+                    },
+                    {
+                        id:22,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '15 487,00',
+                        class: 'canceled',
+                        status: 'Отмена'
+                    },
+                    {
+                        id:23,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '13 487,00',
+                        class: 'canceled',
+                        status: 'Отмена'
+                    },
+                    {
+                        id:24,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '15 487,00',
+                        class: 'refund',
+                        status: 'Возврат'
+                    },
+                    {
+                        id:25,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '15 487,00',
+                        class: 'refund',
+                        status: 'Возврат'
+                    },
+                    {
+                        id:26,
+                        orderId: '#12358',
+                        sum: '14 487,00',
+                        total: '14 487,00',
+                        class: 'done',
+                        status: 'Завершено'
+                    },
+                    {
+                        id:27,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '13 487,00',
+                        class: 'ontheway',
+                        status: 'В пути к клиенту'
+                    },
+                    {
+                        id:28,
+                        orderId: '#12358',
+                        sum: '15 487,00',
+                        total: '15 487,00',
+                        class: 'done',
+                        status: 'Завершено'
+                    },
+                ],
+                action:"replace"
+            };
+            fillTemplate(display_orders);*/
+
+
+            if(getCookie("filters_status")=="ru") {
+                //alert(getCookie("filters_status"));
+                document.getElementById("ru").classList.add("active");
+                document.write("<scr"+"ipt src='js/cms_content_ru.js'></s"+"cript>");
+            } else {
+                document.getElementById("ru").classList.remove("active");
+            }
+
+
+            if(getCookie("filters_status")=="en") {
+                //alert(getCookie("filters_status"));
+                document.getElementById("en").classList.add("active");
+                document.write("<scr"+"ipt src='js/cms_content_en.js'></s"+"cript>");
+            } else {
+                document.getElementById("en").classList.remove("active");
+            }
+
+
+
+        </script>
+
+
+
+
+        <!--<div id="script_multilingualism"><script src='js/cms_content_,ru.js'></script></div>-->
+        <script src="./StorPad_files/renderData.js.Без названия"></script>
+        <script src="./StorPad_files/filterData.js.Без названия"></script>
+        <script src="./StorPad_files/renderTable.js.Без названия"></script>
+        <script src="./StorPad_files/donut.js.Без названия"></script>
+        <script src="./StorPad_files/bar.js.Без названия"></script>
+        <script src="./StorPad_files/line.js.Без названия"></script>
+        <script src="./StorPad_files/AllDiagrams.js.Без названия"></script>
+        <script src="./StorPad_files/main.js.Без названия"></script>
+    
+
+<div class="mallbery-caa" style="z-index: 2147483647 !important; text-transform: none !important; position: fixed;"></div><div class="mallbery-caa" style="z-index: 2147483647 !important; text-transform: none !important; position: fixed;"></div></body></html>

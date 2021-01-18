@@ -1,0 +1,80 @@
+<div class="content">
+	<h1>Заказы</h1>
+	<table id="example" class="display" style="width:100%;" cellspacing="0">
+        <thead class="c1 padding">
+            <tr class="c1">
+                <th>ID Дисплея</th>
+                <th>ID Заказа</th>
+                <th>Дата Заказа</th>
+                <th>Клиент</th>
+                <th>Сумма</th>
+                <th>Скидка</th>
+                <th>Итого</th>
+                <th>Статус заказа</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" ></script>
+<script>
+    /*
+    	$('#example').DataTable( {
+        "ajax": './ajax/data/arrays.txt',
+        "iDisplayLength": 100,
+        "lengthChange": false,
+        "searching": true,
+        "info": false,
+        "paging": true,
+        "language": {
+        "search": "Поиск:"
+            }
+        });
+        */
+</script>
+<script type="text/javascript">
+        fetch('api.php', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: JSON.stringify({type: "getallOrders"})
+        })
+        .then((response) => {
+           return response.json();
+        })
+        .then((data) => {
+            
+            data.forEach(element => {
+               element["contact"] = element["customer_fio"] + "<br>" + element["customer_phone"];
+               element["discount"] = "<center>-</center>"; //временное поле скидки
+            });
+
+            console.log(data);
+            $('#example').DataTable( {
+                "data": data,
+                "columns": [
+                    { "data": "device_id" },
+                    { "data": "id"},
+                    { "data": "date_create"},
+                    { "data": "contact"},
+                    { "data": "summ_with_discount_vitrina"},
+                    { "data": "discount"},
+                    { "data": "summ_with_discount_vitrina"},
+                    { "data": "order_status"}
+                ],
+                "iDisplayLength": 20,
+                "lengthChange": false,
+                "searching": true,
+                "info": false,
+                "paging": true,
+                "aaSorting": [[ 2, "desc" ]],
+                "language": 
+                {
+                "search": "Поиск:"
+                }
+            });
+        });
+        //console.log(response);
+        //let result = response.json();
+</script>

@@ -1,0 +1,529 @@
+<div class="content">
+				<div class="contentHeader">
+									<h1>Рабочий стол</h1>
+						<div class="filterPanel">Период:
+						<div id="now" class="btn">Сегодня</div>
+						<div id="sevenDay" class="btn">7 дней</div>
+						<div id="month" class="btn">30 дней</div>						
+					    </div>
+				</div>
+
+				<div class="orderstatus">
+					<div class="status window">
+						<div class="statusHeader"><h2>Статус заказов</h2></div>
+						<hr>
+						<div class="pieblock" style="width:80%; margin: 0 auto; padding: 4rem 0rem;">
+    						<canvas id="myChart" style="width: 20rem;"></canvas>
+						</div>
+					</div>
+					<div class="info window">
+						<div class="statusHeader"><h2>Статус сессий </h2>
+
+						</div>
+						<hr>
+						<div class="infocontent">
+							<div class="tabletitles">
+								<div class="tabletitle">Сессии</div>
+								<div class="tabletitle">Открытие карточек</div>
+								<div class="tabletitle">Заказов</div>
+							</div>
+							<div class="tablevalues">
+								<div class="tablevalue" id="session">##session##</div>
+								<div class="tablevalue" id="card">##card##</div>
+								<div class="tablevalue" id="orders">##orders##</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="orderPays">
+					<div class="window windowLarge">
+					<div class="statusHeader">
+						<h2>Заказы и оплаты </h2>
+					</div>
+					<hr>
+					 <div class="windowContent">
+					 	<div id="chart_div" style="width: 100%; height: 55rem;">
+					 </div>
+					 </div>
+					</div>
+				</div>
+				<div class="orderPays">
+					<div class="window windowLarge">
+					<div class="statusHeader">
+						<h2>Распределение заказов по дисплеям</h2>
+					</div>
+					<hr>
+					 <div class="windowContent">
+					 	<div id="chart_div2" style="width: 100%; height: 40rem;">
+					 </div>
+					 </div>
+					</div>
+				</div>
+ 				<div class="table">
+ 					<div class="window windowLarge">
+					<div class="statusHeader">
+						<h2>Распределение заказов по дисплеям</h2>
+					</div>
+					<hr>
+					<div class="windowContent">
+                    <table id="mainDisplay" class="display" style="width:100%;" cellspacing="0">
+                        <thead class="c1 padding">
+                            <tr class="c1">
+                                <th>ID заказа</th>
+                                <th>Дата заказа</th>
+                                <th>Кол-во</th>
+                                <th>Сумма</th>
+       	                        <th>id витрины</th>
+                                <th>Статус</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    </div>
+                </div>
+			</div>
+			</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+	/*----КРУГЛЫЙ ГРАФИК----*/
+
+	let myPieChart = null;
+
+	drawDonat(30, false);
+
+	function drawDonat(numDay, redraw)
+	{
+		fetch('api.php', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: JSON.stringify({type: "getForDonut", day: numDay})
+	    })
+		.then((response) => {
+	           return response.json();
+	        })
+	    .then((data) => {
+	        
+	        console.log(data);
+
+	        let date = [];
+	        let statuses = [];
+	        data.forEach(element => {
+	        	if(element['order_status'] != null)
+	        	{
+	        		statuses.push(element['order_status']);
+	        		date.push(element['number_status'])
+	        	}
+	        });
+
+
+	        if (redraw)
+	        {
+	        	myPieChart.destroy();
+	        }
+
+	        let colors = ['#B999FA', '#FAA871', '#696DA1', '#632DA2', '#f08fd1'];
+
+	        let ctx = document.getElementById('myChart').getContext('2d');
+			myPieChart = new Chart(ctx, {
+			   type: 'doughnut',
+			   data: {
+			       labels: statuses,
+			       datasets: [{
+			           label: 'My First dataset',
+			           data: date,
+			           backgroundColor: colors
+			       }]
+			   },
+			   options: {
+	       			weight: 10,
+				cutoutPercentage: 65,
+	        		responsive: true,				
+				animation: {
+					duration: 1700
+				},
+	        		legend: {
+	            			position : 'right',
+	            			align: 'start',
+					fullWidth: false,
+	            			labels: {
+	               		fontSize: 15,
+	                	fontFamily: 'Gilroy, sans-serif',
+	                	fontColor: '#192A3E',
+	                	usePointStyle: true,
+	                	padding: 20
+	            		}
+	        		},
+				tooltips: {
+	            			bodyFontSize: 20,
+	            			bodySpacing: 3
+	        		}
+	            
+	    		}
+			});
+	    });
+	}
+	
+</script>
+<script type="text/javascript">
+	/*----ПОЛУЧЕНИЕ ЭВЕНТОВ----*/
+
+	getEvents(30);
+
+	function getEvents(numDay)
+	{
+		fetch('api.php', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: JSON.stringify({type: "getEvents", day: numDay})
+	    })
+		.then((response) => {
+	           return response.json();
+	        })
+	    .then((data) => {
+	        
+	        console.log(data);
+
+	        let values = document.querySelector('.tablevalues').querySelectorAll('.tablevalue'); 
+	        let v = [...values];
+	        v.forEach(element => {
+	           	element.innerText = data[element.id]['numevents']; 
+	        });
+
+	    });
+		}
+	
+</script>
+<script type="text/javascript">
+	/*----ЛИНЕЙНЫЙ ГРАФИК----*/
+
+	drawLine(30);
+
+	function drawLine(numDay)
+	{
+		fetch('api.php', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: JSON.stringify({type: "getForOrderAndPay", day: numDay})
+	    })
+		.then((response) => {
+	           return response.json();
+	        })
+	    .then((data) => {
+	        
+	        console.log(data);
+
+	        google.charts.load('current', {'packages':['line', 'corechart']});
+	      	google.charts.setOnLoadCallback(drawChart);
+
+	      	function drawChart()
+	      	{
+				var button = document.getElementById('change-chart');
+			    var chartDiv = document.getElementById('chart_div');
+
+		        date = google.visualization.arrayToDataTable(get(data));
+
+		        /*
+			    var materialOptions = {
+			        chart: {
+			          title: ''
+			        },
+			        width: '90%',
+			        height: '100%',
+			        color:"red",
+			        series: {
+			          // Gives each series an axis name that matches the Y-axis below.
+			          0: {
+			            color: 'red',
+			          },
+			          1: {axis: ''}
+			        },
+			        axes: {
+			          // Adds labels to each axis; they don't have to match the axis names.
+			          y: {
+			            Temps: {label: ''},
+			            Daylight: {label: ''}
+			          }
+			        }
+			    };
+				*/
+
+				let options = {
+			        hAxis: {
+			            title: '',
+			            textStyle: {
+			                color: '#4C5862',
+			                fontSize: 17,
+			                fontName: 'GilroyNormal, sans-serif'
+			            },
+			            baselineColor: '#EBEDF0',
+			            gridlines: {
+			                color: '#EBEDF0'
+			            },
+			            format: 'd MMM '
+			        },
+			        vAxis: {
+			            title: '',
+			            textStyle: {
+			                color: '#4C5862',
+			                fontSize: 17,
+			                fontName: 'GilroyNormal, sans-serif'
+			            },
+			            baselineColor: '#EBEDF0',
+			            gridlines: {
+			                color: '#EBEDF0'
+			            }
+			        },
+				maintainAspectRatio: false,
+			        backgroundColor: '#ffffff',
+			        chartArea: {
+			            width:'80%',
+
+			        },
+			        colors: ['#F96E7D'],
+			        pointSize: 5
+			    };
+
+			    //var materialChart = new google.charts.LineChart(chartDiv); //рисуется быстрее, выглядит хуже
+			    let chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+	        	chart.draw(date, options);
+	      	}
+
+	    });
+	}
+	
+
+    function get(date)
+    {
+    	let headings = ['Дата', 'Сумма'];
+    	let data = [];
+    	data.push(headings);
+    	date.forEach(element => {
+    		data.push(element);
+    	})
+    	/*
+    	let headings = ['Дата', 'Сумма'];
+    	d = Object.entries(date);
+    	let data = [];
+    	data.push(headings);
+    	let count = 0;
+    	d.forEach(element => {
+    		data.push(element);
+    	})*/
+    	console.log(data);
+		
+    	return data;
+    }
+</script>
+<script type="text/javascript">
+
+	drawBar(30);
+
+	function drawBar(numDay)
+	{
+		fetch('api.php', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: JSON.stringify({type: "getForBar", day: numDay})
+	    })
+		.then((response) => {
+	           return response.json();
+	        })
+	    .then((data) => {
+	        
+	        console.log(data);
+
+	        let date = data
+	        google.charts.load('current', {'packages':['line']});
+		    google.charts.setOnLoadCallback(drawStacked);
+
+		    function drawStacked() 
+		    {
+			    let data = google.visualization.arrayToDataTable(getData(date));
+
+			    let options = {
+			        title: '',
+				animation: {
+          				duration: 400,
+          				easing: 'linear',
+          				startup: true
+      				},
+			        chartArea: {
+			            width: '85%',
+				    height: '75%'
+			        },
+			        isStacked: true,
+				maintainAspectRatio: false,
+			        hAxis: {
+			            title: '',
+			            minValue: 0,
+			            maxValue: 400000
+			        },
+			        vAxis: {
+			            title: null
+			        },
+			        colors: ['#efedea','#c5c3bf', '#B999FA','#696DA1','#FAA871'],
+			        fontSize: 17,
+			        fontName: 'GilroyNormal, sans-serif',
+			        hAxis: {
+				    fontName: 'Gilroy, sans-serif',
+			            baselineColor: '#DFE0EB',
+			            gridlines: {
+			                color: '#EBEDF0'
+			            },
+			            viewWindowMode: 'maximized',
+			            maxValue: 60000
+			        },
+			        legend: {
+			            position: 'bottom'
+			        }
+			    };
+			    let div = document.getElementById('chart_div2');
+			    let chart = new google.visualization.BarChart(div);
+			    chart.draw(data, options);
+			}
+	    });
+	}
+	
+	
+	function getData(date)
+	{
+		let headings = ['Заказы', 'Оплачен','Ожидается оплата', 'Подтвержден', 'Ожидает подтверждения', 'Отменен'];
+		d = Object.entries(date);
+		data = [];
+		data.push(headings);
+		count = 0;
+		d.forEach(element => {
+
+			count++;
+			data[count] = [];
+			data[count].push(element[0]); 
+
+			let elValues = element[1];
+
+			for (let i = 1; i < headings.length; i++)
+			{
+				let name = headings[i];
+				let wasAdd = false;
+
+				for (let j = 0; j < elValues.length; j++)
+				{
+					if (typeof elValues[j][name] != "undefined")
+					{
+						data[count].push(parseInt(elValues[j][name]))
+						wasAdd = true;
+					}
+				}
+
+				if (!wasAdd)
+				{
+					data[count].push(0);
+				}
+				
+			}
+		});
+		console.log(data);
+
+		return data;
+	}
+</script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" ></script>
+<script type="text/javascript">
+
+	getTable("30");
+
+	function getTable(numDay)
+	{
+		fetch('api.php', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: JSON.stringify({type: "getOrders", day: numDay})
+	    })
+		.then((response) => {
+	           return response.json();
+	        })
+	    .then((data) => {
+	        
+	        console.log(data);
+
+	        $('#mainDisplay').DataTable( {
+	                "data": data,
+	                "columns": [
+	                    { "data": "id"},
+	                    { "data": "date_create"},
+	                    { "data": "order_count"},
+	                    { "data": "summ_with_discount_vitrina"},
+	                    { "data": "device_id"},
+	                    { "data": "order_status"}
+	                ],
+	                "iDisplayLength": 20,
+	                "lengthChange": false,
+	                "searching": true,
+	                "info": false,
+	                "paging": false,
+	                "aaSorting": [[ 1, "desc" ]],
+	                "language": 
+	                {
+	                "search": "Поиск:"
+	                }
+	            });
+	    });
+	}
+
+	/*---ФУНКЦИЯ ПЕРЕРИСОВКИ ТАБЛИЦ---*/
+	function redrawTable(numDay)
+	{
+		
+
+		fetch('api.php', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: JSON.stringify({type: "getOrders", day: numDay})
+	    })
+		.then((response) => {
+	           return response.json();
+	        })
+	    .then((data) => {
+	        let dataTable = $('#mainDisplay').DataTable();
+	        console.log(data);
+	        //dataTable.fnAddData(data["id"], data["date_create"],data["order_count"],data["summ_with_discount_vitrina"],data["device_id"],data["order_status"]);
+	        dataTable.rows.add(data).draw();
+	    });
+	}
+	
+</script>
+<script type="text/javascript">
+	let id = ["now", "sevenDay", "month"];
+	let days = ["1", "7", "30"];
+	for (let i = 0; i < id.length; i++)
+	{
+		let day = days[i];
+		document.getElementById(id[i]).onclick = function()
+		{
+			drawDonat(day, true);
+			getEvents(day);
+			drawLine(day);
+			drawBar(day);
+			let dataTable = $('#mainDisplay').DataTable();
+			dataTable.clear().draw();
+			redrawTable(day);
+		}
+	}
+</script>

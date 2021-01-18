@@ -1,0 +1,52 @@
+<div class="content">
+				<h1>Клиенты</h1>
+				<table id="tableclients" class="display" style="width:100%" cellspacing="0">
+                    <thead class="c1 padding">
+                        <tr class="c1">
+                            <th class="t1">ID Клиента<div class="iconDownt1 rotate"></div></th>
+                            <th class="t2">Имя<div class="iconDownt2"></div></th>
+                            <th class="t3">Телефон<div class="iconDownt3"></div></th>
+                        </tr>
+                    </thead>
+                </table>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" ></script>
+<script type="script" src="js/script.js" ></script>
+
+<script type="text/javascript">
+        fetch('api.php', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            body: JSON.stringify({type: "getallClients"})
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            
+            console.log(data);
+
+            $('#tableclients').DataTable( {
+                "data": data,
+                "columns": [
+                    { "data": "order_count" },
+                    { "data": "customer_fio"},
+                    { "data": "customer_phone"}
+                ],
+                "iDisplayLength": 20,
+                "lengthChange": false,
+                "searching": true,
+                "info": false,
+                "paging": true,
+                "bpaginate": true,
+                "language": 
+                {
+                    "search": "Поиск:"
+                }
+            });
+        });
+</script>
